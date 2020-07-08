@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML登录窗口案例</title>
+
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <style type="text/css">
+        body {
+            background-image: url('11.jpg');
+        }
+        .middle {
+            margin-top: 110px;
+            margin-bottom: 110px;
+            padding: 100px 50px 50px 50px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 10px 10px 5px rgb(0,0,0,0.1);
+
+        }
+        .login {
+            margin-left: 20px;
+        }
+        .font2 {
+            font-size: 0.6em;
+        }
+        .btn {
+            border-radius: 28px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="middle mx-auto h-75 w-75">
+        <div class="row">
+            <div class="col col-12 col-md-6">
+                <img class="rounded img-fluid" src="12.jpg" alt="web开发">
+            </div>
+            <div class="col col-12 col-md-6">
+                <div class="login">
+                    <h2 class="font-weight-bold">登录</h2>
+
+                   <form>
+                        <div class="form-group">
+                            <label for="Username" class="sr-only">Email address:</label>
+
+                            <input type="Username" class="form-control" id="Username" placeholder="Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pwd" class="sr-only">Password:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Password">
+                        </div>
+
+                        <div class="xuan custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <label class="custom-control-label font-weight-light small" for="customCheck">记住用户名</label>
+                        </div>
+
+                        <br>
+                        <button type="button" class="btn btn-primary btn-block w-75 mx-auto" onclick="check()">登 录</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function check(){
+        var Username=document.getElementById("account").value;
+        var pwd = document.getElementById("pwd").value;
+ if (Username.length==0){
+     alert("账号不能为空");
+ } else {
+     if (Username.length>8&&Username.length<16)
+     {
+         if (patter.test(pwd))
+         {
+         }
+         else{
+             alert("密码必须含有特殊字符")；
+             return false;
+         }
+     }else {
+         alert("账号长度需在8-16");
+         return false;
+     }
+ }
+
+    }
+</script>
+
+</body>
+</html>
