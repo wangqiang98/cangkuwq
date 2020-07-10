@@ -64,6 +64,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-day4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/10/day4/" class="article-date">
+  <time datetime="2020-07-10T06:03:49.000Z" itemprop="datePublished">2020-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/day4/">day4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##贪心算法##<br>球解决策过程中最优化的数学方案<br>##最优解法–动态规划##<br>####代码案例：####<br>-十级楼梯，每次一级或两级 ，多少种走法？<br>package com.youkeda;</p>
+<p>import java.util.HashMap;</p>
+<p>public class Demo {</p>
+<pre><code>public static HashMap&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();
+
+public static int f(int stepNum) {
+    // 没有楼梯
+    if (stepNum &lt; 1) {
+        return 0;
+    }
+    // 楼梯为1阶v
+    if (stepNum == 1) {
+        return 1;
+    }
+    // 楼梯为2阶
+    if (stepNum == 2) {
+        return 2;
+    }
+
+    if (cache.containsKey(stepNum)) {
+        return cache.get(stepNum);
+    }
+
+    int sum = f(stepNum - 1) + f(stepNum - 2);
+    cache.put(stepNum, sum);
+    return sum;
+}
+
+public static void main(String[] args) {
+    System.out.println(&quot;10级楼梯最多走法：&quot; + f(10));
+}</code></pre><h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcftkefp0001qsux9uzq1ztw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/10/hello-world/" class="article-date">
@@ -103,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcftaz060000nkux4jhb3uab" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcftkefr0002qsux2nlm05pq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcftaz0b0001nkux28ne7lfj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcftkefk0000qsuxf4cracs5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,6 +246,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/07/10/day4/">day4</a>
+          </li>
         
           <li>
             <a href="/2020/07/10/hello-world/">Hello World</a>
