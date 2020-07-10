@@ -64,6 +64,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/10/day3/" class="article-date">
+  <time datetime="2020-07-10T02:10:33.000Z" itemprop="datePublished">2020-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/day3/">day3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##hexo 应用##<br>创建博客 hexo new 博客名<br>会创建一个新的md 文件<br>该文件在文件夹 source/_posts文件夹内<br>发布博客<br>hexo clean 清除缓存<br>hexo g  生成静态文件<br>hexo d   把文件部署到博客上<br>##更改主题##<br>下载主题文件<br>next的下载可以在 git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> thems/next<br>更改文件配置 theme:landscape改为theme:next<br>##Git 分支##<br>创建分支 git branch dev<br>切换分支 git checkout dev<br>合并命令 git checkout -b dev<br>##行为日志##<br>  作用     ： 行为日志包括用户的行为，也包括服务器响应是否正常。<br> <strong>Nigix</strong>  ：也叫 web server 接收用户在浏览器输入网址后发出的请求<br>分析用户行为  :1. grep -c ‘11.176.159.95’ cookie_log.log<br>              分析从该文件中查找引号内文件出现次数<br>              1. grep ‘11.176.159.95’ cookie_log.log<br>              查找关键字所在的行<br>              1.  GET /renders.test.com/g/agentsales/js/view.js HTTP/1.1        复杂统计出现最多的次数</p>
+<h2 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本##"></a>shell 脚本##</h2><p>脚本头  #！/bin/bash<br>脚本内容  #!/bin/bashif [ -f ‘cookie_log.log’ ]; then  cat cookie_log.log | awk ‘{print $8}’ | sort | uniq -c | sort -k1r | head -10<br>保存 top10.sh<br>运行 sh top10.sh</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcfl57fk0001nsux7rx483b1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-day2-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/10/day2-1/" class="article-date">
+  <time datetime="2020-07-10T02:10:17.000Z" itemprop="datePublished">2020-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/day2-1/">day2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/10/day2-1/" data-id="ckcfl57ff0000nsux61h9aja7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-day2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/09/day2/" class="article-date">
@@ -93,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/09/day2/" data-id="ckcfkr0g90000pouxali5eowm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/09/day2/" data-id="ckcfl57fn0002nsuxfxl27ktr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/hello-world/" data-id="ckcfkr0go0001poux7fx94vbs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/08/hello-world/" data-id="ckcfl57fo0003nsux7rz8651j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,6 +255,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/07/10/day3/">day3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/10/day2-1/">day2</a>
+          </li>
         
           <li>
             <a href="/2020/07/09/day2/">day2</a>
