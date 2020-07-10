@@ -64,6 +64,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-publishblog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/10/publishblog/" class="article-date">
+  <time datetime="2020-07-10T06:36:59.000Z" itemprop="datePublished">2020-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/publishblog/">贪心算法及动态规划</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><ul>
+<li>建立数学模型来描述问题  。</li>
+<li>把求解的问题分成若干个子问题。</li>
+<li>对每个子问题求解，得到子问题的局部最优解 。</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解 。<br>贪心算法是一种对某些求最优解问题的更简单、更迅速的设计技术。贪心算法的特点是一步一步地进行，常以当前情况为基础根据某个优化测度作最优选择，而不考虑各种可能的整体情况，省去了为找最优解要穷尽所有可能而必须耗费的大量时间。贪心算法采用自顶向下，以迭代的方法做出相继的贪心选择，每做一次贪心选择，就将所求问题简化为一个规模更小的子问题，通过每一步贪心选择，可得到问题的一个最优解。虽然每一步上都要保证能获得局部最优解，但由此产生的全局解有时不一定是最优的，所以贪心算法不要回溯<h2 id="实现该算法的过程"><a href="#实现该算法的过程" class="headerlink" title="实现该算法的过程"></a>实现该算法的过程</h2></li>
+</ul>
+<ol>
+<li>从问题的某一初始状态出发</li>
+<li>while 能朝给定总目标前进一步 do</li>
+<li>求出可行解的一个解元素；</li>
+<li>由所有解元素组合成问题的一个可行解<h2 id="动态规划思想"><a href="#动态规划思想" class="headerlink" title="动态规划思想"></a>动态规划思想</h2>若要解一个给定问题，我们需要解其不同部分（即子问题），再合并子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量： 一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。 这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。<h2 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h2></li>
+<li>最优子结构</li>
+<li>边界</li>
+<li>状态转移公式</li>
+</ol>
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckcfuzgwf0003f4uxakw2390k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-day4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/10/day4/" class="article-date">
@@ -123,7 +175,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcfu6e8r0001t4ux0xen8dup" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcfuzgwb0001f4ux5nrlbaw1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +224,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcfu6e8m0000t4ux4e9j8by6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcfuzgwd0002f4ux14qzdefn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +265,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcfu6e8u0002t4uxdnr5f5sl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcfuzgw60000f4uxdos19ry2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,6 +304,10 @@ public static void main(String[] args) {
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/07/10/publishblog/">贪心算法及动态规划</a>
+          </li>
         
           <li>
             <a href="/2020/07/10/day4/">day4</a>
