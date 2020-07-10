@@ -7,15 +7,15 @@
   
   <title>day3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##hexo 应用##创建博客 hexo new 博客名会创建一个新的md 文件该文件在文件夹 source&#x2F;_posts文件夹内发布博客hexo clean 清除缓存hexo g  生成静态文件hexo d   把文件部署到博客上##更改主题##下载主题文件next的下载可以在 git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next thems&#x2F;">
+  <meta name="description" content="hexo 应用创建博客 hexo new 博客名会创建一个新的md 文件该文件在文件夹 source&#x2F;_posts文件夹内发布博客hexo clean 清除缓存hexo g  生成静态文件hexo d   把文件部署到博客上 更改主题下载主题文件next的下载可以在 git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next thems&#x2F;next更改文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="day3">
 <meta property="og:url" content="http://yoursite.com/2020/07/10/day3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##hexo 应用##创建博客 hexo new 博客名会创建一个新的md 文件该文件在文件夹 source&#x2F;_posts文件夹内发布博客hexo clean 清除缓存hexo g  生成静态文件hexo d   把文件部署到博客上##更改主题##下载主题文件next的下载可以在 git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next thems&#x2F;">
+<meta property="og:description" content="hexo 应用创建博客 hexo new 博客名会创建一个新的md 文件该文件在文件夹 source&#x2F;_posts文件夹内发布博客hexo clean 清除缓存hexo g  生成静态文件hexo d   把文件部署到博客上 更改主题下载主题文件next的下载可以在 git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next thems&#x2F;next更改文">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-10T02:10:33.000Z">
-<meta property="article:modified_time" content="2020-07-10T05:00:38.008Z">
+<meta property="article:modified_time" content="2020-07-10T06:23:05.486Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -88,13 +88,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##hexo 应用##<br>创建博客 hexo new 博客名<br>会创建一个新的md 文件<br>该文件在文件夹 source/_posts文件夹内<br>发布博客<br>hexo clean 清除缓存<br>hexo g  生成静态文件<br>hexo d   把文件部署到博客上<br>##更改主题##<br>下载主题文件<br>next的下载可以在 git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> thems/next<br>更改文件配置 theme:landscape改为theme:next<br>##Git 分支##<br>创建分支 git branch dev<br>切换分支 git checkout dev<br>合并命令 git checkout -b dev<br>##行为日志##<br>  作用     ： 行为日志包括用户的行为，也包括服务器响应是否正常。<br> <strong>Nigix</strong>  ：也叫 web server 接收用户在浏览器输入网址后发出的请求<br>分析用户行为  :1. grep -c ‘11.176.159.95’ cookie_log.log<br>              分析从该文件中查找引号内文件出现次数<br>              1. grep ‘11.176.159.95’ cookie_log.log<br>              查找关键字所在的行<br>              1.  GET /renders.test.com/g/agentsales/js/view.js HTTP/1.1        复杂统计出现最多的次数</p>
-<h2 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本##"></a>shell 脚本##</h2><p>脚本头  #！/bin/bash<br>脚本内容  #!/bin/bashif [ -f ‘cookie_log.log’ ]; then  cat cookie_log.log | awk ‘{print $8}’ | sort | uniq -c | sort -k1r | head -10<br>保存 top10.sh<br>运行 sh top10.sh</p>
+        <h2 id="hexo-应用"><a href="#hexo-应用" class="headerlink" title="hexo 应用"></a>hexo 应用</h2><p>创建博客 hexo new 博客名<br>会创建一个新的md 文件<br>该文件在文件夹 source/_posts文件夹内<br>发布博客<br>hexo clean 清除缓存<br>hexo g  生成静态文件<br>hexo d   把文件部署到博客上</p>
+<h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>下载主题文件<br>next的下载可以在 git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> thems/next<br>更改文件配置 theme:landscape改为theme:next </p>
+<h2 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h2><p>创建分支 git branch dev<br>切换分支 git checkout dev<br>合并命令 git checkout -b dev</p>
+<h2 id="行为日志"><a href="#行为日志" class="headerlink" title="行为日志"></a>行为日志</h2><p>  作用     ： 行为日志包括用户的行为，也包括服务器响应是否正常。<br> ** Nigix **  ：也叫 web server 接收用户在浏览器输入网址后发出的请求<br>分析用户行为  :1. grep -c ‘11.176.159.95’ cookie_log.log<br>              分析从该文件中查找引号内文件出现次数<br>              1. grep ‘11.176.159.95’ cookie_log.log<br>              查找关键字所在的行<br>              1.  GET /renders.test.com/g/agentsales/js/view.js HTTP/1.1        复杂统计出现最多的次数</p>
+<h2 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h2><p>脚本头  #！/bin/bash<br>脚本内容  #!/bin/bashif [ -f ‘cookie_log.log’ ]; then  cat cookie_log.log | awk ‘{print $8}’ | sort | uniq -c | sort -k1r | head -10<br>保存 top10.sh<br>运行 sh top10.sh</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcftkefk0000qsuxf4cracs5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcfu6e8u0002t4uxdnr5f5sl" class="article-share-link">Share</a>
       
       
     </footer>
