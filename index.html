@@ -64,6 +64,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-interface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/interface/" class="article-date">
+  <time datetime="2020-07-20T10:43:11.000Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/interface/">interface</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="接口类、接口体、接口方法的一些特性"><a href="#接口类、接口体、接口方法的一些特性" class="headerlink" title="接口类、接口体、接口方法的一些特性"></a>接口类、接口体、接口方法的一些特性</h2><ol>
+<li>Java不支持多重继bai承，du即一个类zhi只能有一个父类</li>
+</ol>
+<p>2.为了克服单继承的缺点，Java使用了接口，一个类可dao以实现多个接口</p>
+<p>3.接口是抽象方法和常量值定义的集合，是一种特殊的抽象类</p>
+<p>4.接口中只包含常量和方法的定义，没有变量和方法的实现</p>
+<p>5.接口中的所有方法都是抽象的</p>
+<p>6.接口中成员的访问类型都是public</p>
+<p>7.接口中的变量默认使用public static final标识(可以在定义的时候不加此修饰，系统默认)<br>8.接口通过使用关键字interface来声明格式：interface 接口的名字</p>
+<p>9.接口中可不写public，但在子类中实现接口的过程中public不可省</p>
+<p>接口体：</p>
+<ul>
+<li><p>接口体中包含常量定义和方法定义两部分</p>
+</li>
+<li><p>接口体中只进行方法的声明，不允许提供方法的实现</p>
+</li>
+<li><p>方法的定义没有方法体，且用分号结尾</p>
+<h3 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h3><p>一个抽象类中的所bai有方法都是抽象的,就可以将这个类用另外一种方式来定义dao,也就是接口定义。<br><strong>接口</strong>是<strong>抽象方法和常量值的定义的集合</strong>,从本质上讲，接口是一种<strong>特殊的抽象类</strong>,这种抽象类中<strong>只包含常量和方法的定义,而没有变量和方法的实现</strong>.**<br>可以使用extends来继承接口的常量和抽象方法，但它与类中的extends不同，它可以继承有多个父接口(多重继承)，各父接口间用逗号隔开。<br>接口中的所有常量必须是public static final，方法必须是public abstract，这是系统默认的，不管你在定义接口时，写不写修饰符都是一样的<br>定义接口<br>修饰符 interface 接口名 [extends 父接口列表]<br>{<br>常量域声明<br>抽象方法声明<br>}</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/interface/" data-id="ckcue73pd0009wwux727905ey" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-day9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/20/day9/" class="article-date">
@@ -130,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/20/day9/" data-id="ckcud84c80007awux3ts84z7j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/20/day9/" data-id="ckcue73pa0007wwuxeqe6adqq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/day8/" data-id="ckcud84c70006awux90zr7ucv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/day8/" data-id="ckcue73p90006wwuxe0dbdv5w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckcud84bt0000awux9s17d8up" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckcue73p20001wwux3it9bhsy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckcud84cb000aawuxgd3gcbc9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckcue73pf000bwwuxanrj5yrm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckcud84c60005awuxavnb54b5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckcue73p80005wwuxeues6aeb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -352,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckcud84c50004awux5yi54h0w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckcue73p60003wwux11et230s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +480,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckcud84bz0001awuxblk77d26" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckcue73p70004wwux35kaftgc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +532,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckcud84ca0009awux23mg67wi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckcue73pe000awwux92fk5mwr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -545,56 +601,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcud84c40003awux38j98xcx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/10/hello-world/" class="article-date">
-  <time datetime="2020-07-10T05:00:38.008Z" itemprop="datePublished">2020-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcud84c90008awuxghwvbbo6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcue73p40002wwux1o2vfo20" class="article-share-link">Share</a>
       
       
     </footer>
@@ -640,6 +647,10 @@ public static void main(String[] args) {
       <ul>
         
           <li>
+            <a href="/2020/07/20/interface/">interface</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/20/day9/">day9</a>
           </li>
         
@@ -653,10 +664,6 @@ public static void main(String[] args) {
         
           <li>
             <a href="/2020/07/19/super/">super</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/16/day7/">day7</a>
           </li>
         
       </ul>
