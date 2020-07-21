@@ -64,6 +64,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-day4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/10/day4/" class="article-date">
+  <time datetime="2020-07-10T06:03:49.000Z" itemprop="datePublished">2020-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/day4/">day4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p>球解决策过程中最优化的数学方案</p>
+<h2 id="最优解法–动态规划"><a href="#最优解法–动态规划" class="headerlink" title="最优解法–动态规划"></a>最优解法–动态规划</h2><h4 id="代码案例："><a href="#代码案例：" class="headerlink" title="代码案例："></a>代码案例：</h4><h2 id="十级楼梯，每次一级或两级-，多少种走法？"><a href="#十级楼梯，每次一级或两级-，多少种走法？" class="headerlink" title="** 十级楼梯，每次一级或两级 ，多少种走法？**"></a>** 十级楼梯，每次一级或两级 ，多少种走法？**</h2><p>package com.youkeda;</p>
+<p>import java.util.HashMap;</p>
+<p>public class Demo {</p>
+<pre><code>public static HashMap&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();
+
+public static int f(int stepNum) {
+    // 没有楼梯
+    if (stepNum &lt; 1) {
+        return 0;
+    }
+    // 楼梯为1阶v
+    if (stepNum == 1) {
+        return 1;
+    }
+    // 楼梯为2阶
+    if (stepNum == 2) {
+        return 2;
+    }
+
+    if (cache.containsKey(stepNum)) {
+        return cache.get(stepNum);
+    }
+
+    int sum = f(stepNum - 1) + f(stepNum - 2);
+    cache.put(stepNum, sum);
+    return sum;
+}
+
+public static void main(String[] args) {
+    System.out.println(&quot;10级楼梯最多走法：&quot; + f(10));
+}</code></pre><p>}</p>
+<p>-</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckcvqxigs0003f8ux85wj1kmt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/10/hello-world/" class="article-date">
@@ -103,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcuq1lfl0005dguxce8lhe7k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcvqxigu0006f8uxbizs4b1s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcuq1lcc0000dgux6rxj17rc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckcvqxigp0001f8ux43wd13ek" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,6 +259,10 @@
       <ul>
         
           <li>
+            <a href="/2020/07/21/day10/">day10</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/20/interface/">interface</a>
           </li>
         
@@ -203,10 +276,6 @@
         
           <li>
             <a href="/2020/07/19/changliang/">changliang</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/19/super/">super</a>
           </li>
         
       </ul>
