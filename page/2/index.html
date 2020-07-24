@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-super" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/19/super/" class="article-date">
+  <time datetime="2020-07-19T02:41:51.000Z" itemprop="datePublished">2020-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/19/super/">super</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="super-关键字（子类调用父类方法并构造函数）"><a href="#super-关键字（子类调用父类方法并构造函数）" class="headerlink" title="super 关键字（子类调用父类方法并构造函数）"></a>super 关键字（子类调用父类方法并构造函数）</h2><p><img src="/.com//C:%5CUsers%5Cacer%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200719103639592.png" alt="image-20200719103639592"></p>
+<p><img src="/.com//C:%5CUsers%5Cacer%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200719103956819.png" alt="image-20200719103956819"></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fruit.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> <span class="keyword">extends</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> count;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(<span class="keyword">double</span> weight,<span class="keyword">double</span> price,<span class="keyword">int</span> count)</span></span>&#123;</span><br><span class="line">       <span class="keyword">super</span>(weight,price);<span class="comment">//子类构造函数</span></span><br><span class="line">       <span class="keyword">this</span>.count = count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.count;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.count=count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getAmount</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> price*<span class="keyword">this</span>.count;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.fruit.model;</span><br><span class="line"></span><br><span class="line">public class Orange extends Fruit &#123;</span><br><span class="line">public Orange(double weight,double price)&#123;</span><br><span class="line">       super(weight,price); &#x2F;&#x2F; 子类构造函数</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fruit.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">double</span> weight;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">double</span> price;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="title">Fruit</span><span class="params">(<span class="keyword">double</span> weight,<span class="keyword">double</span> price)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.weight = weight;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getWeight</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.weight;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWeight</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.weight=weight;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.price;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.price=price;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getAmount</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.price*<span class="keyword">this</span>.weight;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fruit.test;</span><br><span class="line"><span class="keyword">import</span> com.fruit.model.Fruit;</span><br><span class="line"><span class="keyword">import</span> com.fruit.model.Apple;</span><br><span class="line"><span class="keyword">import</span> com.fruit.model.Orange;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitTest</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   Fruit apple = <span class="keyword">new</span> Apple(<span class="number">5</span>, <span class="number">8</span>, <span class="number">5</span>);</span><br><span class="line">        <span class="keyword">double</span> appleAmount = apple.getAmount();</span><br><span class="line">        System.out.println(<span class="string">"苹果:"</span> + appleAmount + <span class="string">"元"</span>);</span><br><span class="line"></span><br><span class="line">        Fruit orange = <span class="keyword">new</span> Orange(<span class="number">3.5</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">double</span> orangeAmount = orange.getAmount();</span><br><span class="line">        System.out.println(<span class="string">"橙子:"</span> + orangeAmount + <span class="string">"元"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckd03ucp0000rcguxe0tyggf2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-day7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/16/day7/" class="article-date">
@@ -96,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckczshb3p000fqkuxgbyg34d1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckd03ucoo000gcgux6y2gbln9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckczshb3o000dqkux7rjafdxo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckd03ucot000mcgux8umncxli" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +257,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckczshb3n000bqkuxa01qgm9r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckd03ucol000ccgux70eke68b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +309,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckczshb3t000nqkux04uvhe9l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckd03ucoz000qcgux6x4v56er" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,7 +378,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckczshb3m000aqkux7ky94awl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckd03ucod0006cgux798cbus4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +427,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckczshb3s000kqkux2nnibl7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckd03ucop000icgux3z280ijf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -418,7 +468,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckczshb3j0007qkux1kg3f0px" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckd03ucoc0005cgux47mfhjfh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +496,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li></ul>
     </div>
   </div>
 
@@ -456,7 +506,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a>
+      <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a>
     </div>
   </div>
 
@@ -478,6 +528,10 @@ public static void main(String[] args) {
       <ul>
         
           <li>
+            <a href="/2020/07/24/day14-2/">day14-2</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/24/day14/">day14</a>
           </li>
         
@@ -491,10 +545,6 @@ public static void main(String[] args) {
         
           <li>
             <a href="/2020/07/22/day11/">day11</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/21/day10/">day10</a>
           </li>
         
       </ul>
