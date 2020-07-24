@@ -64,6 +64,78 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-day5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/13/day5/" class="article-date">
+  <time datetime="2020-07-13T09:18:07.000Z" itemprop="datePublished">2020-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/13/day5/">day5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>** 一个小偷沿街偷取现金，偷取相邻两家则会报警，在不触动报警情况下最多偷取多少现金？**</p>
+<h2 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h2><p>输入（房间依次现金）: [1,2,3,1]<br>输出: 4<br>解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。偷窃到的最高金额 = 1 + 3 = 4 。</p>
+<h2 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h2><p>输入: [2,7,9,3,1]<br>输出: 12<br>解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。<br>     偷窃到的最高金额 = 2 + 9 + 1 = 12 。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr>
+<p>import java.util.HashMap;</p>
+<p>public class Demo {</p>
+<pre><code>public static HashMap&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();
+public static int f(int[] rooms) {
+    // 每次调用的时候，将cache情况
+    cache.clear();
+    return fCore(rooms, rooms.length - 1);
+}
+
+public static int fCore(int[] rooms, int index) {
+    // 处理边界情况
+    if (index &lt; 0) {
+        return 0;
+    }
+    if (index == 0) {
+        return rooms[index];
+    }
+    if (cache.containsKey(index)) {
+        return cache.get(index);
+    }
+    // 最后一个房间偷或者不偷两种情况。
+    int max = Math.max(fCore(rooms, index - 1), fCore(rooms, index - 2) + rooms[index]);
+    cache.put(index, max);
+    return max;
+}
+public static void main(String[] args) {
+    int[] rooms1 = {1, 2, 3, 1};
+    System.out.println(&quot;{1,2,3,1}&quot; + f(rooms1));
+    int[] rooms2 = {2, 7, 9, 3, 1};
+    System.out.println(&quot;{2,7,9,3,1}&quot; + f(rooms2));
+
+}</code></pre><p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckczsar110006o4uxbws19l8u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-publishblog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/10/publishblog/" class="article-date">
@@ -106,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckczs7p8o000e9cuxh78cfhst" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckczsar1b000do4ux2augalmq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,7 +247,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckczs7p8b00059cux6n5v55c2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckczsar0v0003o4ux3v3u16v2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +296,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckczs7p8l000c9cux0qv5dgmf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckczsar19000bo4ux836dee2r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +337,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckczs7p8700039cux8ekw11hb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckczsar0z0005o4uxhm5ya3ep" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +365,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li></ul>
     </div>
   </div>
 
@@ -303,7 +375,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a>
+      <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a>
     </div>
   </div>
 
@@ -325,6 +397,10 @@ public static void main(String[] args) {
       <ul>
         
           <li>
+            <a href="/2020/07/24/day12/">day12</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/22/day11/">day11</a>
           </li>
         
@@ -338,10 +414,6 @@ public static void main(String[] args) {
         
           <li>
             <a href="/2020/07/20/day9/">day9</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/19/day8/">day8</a>
           </li>
         
       </ul>
