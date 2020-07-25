@@ -64,6 +64,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-day8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/19/day8/" class="article-date">
+  <time datetime="2020-07-19T12:55:55.000Z" itemprop="datePublished">2020-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/19/day8/">day8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java面向对象-接口（接口实现类）"><a href="#Java面向对象-接口（接口实现类）" class="headerlink" title="Java面向对象-接口（接口实现类）"></a>Java面向对象-接口（接口实现类）</h2><p>![](C:\Users\acer\Pictures\Saved Pictures\465.JPG)</p>
+<p>如上图，我们根据这个UML图完成代码的编写我们需要你在RoleServiceTest类里完成RoleService角色数据的添加和获取。你需要得到RoleService的实例，以及调用addRole方法,最后调用getRoles方法得到所有的角色，并打印出角色集合的最后-条记录的名称和描述。测试数据如下：</p>
+<p>![](C:\Users\acer\Pictures\Saved Pictures\645654.JPG)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.model;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Role</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Role</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">//定义属性</span></span><br><span class="line">    <span class="keyword">private</span> String desc;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDesc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDesc</span><span class="params">(String desc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.desc = desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.Role;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * RoleService</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RoleService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addRole</span><span class="params">(Role role)</span></span>;</span><br><span class="line"><span class="comment">//接口的方法 ，数据类型是Role</span></span><br><span class="line">    <span class="function">ArrayList&lt;Role&gt; <span class="title">getRoles</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.service.impl;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.RoleService;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.Role;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleServiceImpl</span> <span class="keyword">implements</span> <span class="title">RoleService</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> ArrayList&lt;Role&gt;ROLES =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">//实例化实现类接口，定义成一个常量ROLES</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addRole</span><span class="params">(Role role)</span></span>&#123;</span><br><span class="line">  ROLES.add(role);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Role&gt; <span class="title">getRoles</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ROLES;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.RoleService;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.Role;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.impl.RoleServiceImpl;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleServiceTest</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  RoleService roleService = <span class="keyword">new</span> RoleServiceImpl();</span><br><span class="line">  Role role=<span class="keyword">new</span> Role();</span><br><span class="line">  role.setName(<span class="string">"admin"</span>);</span><br><span class="line">  role.setDesc(<span class="string">"系统管理员"</span>);</span><br><span class="line">  roleService.addRole(role);</span><br><span class="line">  role.setName(<span class="string">"design"</span>);</span><br><span class="line">  role.setDesc(<span class="string">"设计师"</span>);</span><br><span class="line">  roleService.addRole(role);</span><br><span class="line">  role.setName(<span class="string">"dev"</span>);</span><br><span class="line">  role.setDesc(<span class="string">"开发者"</span>);</span><br><span class="line">  roleService.addRole(role);</span><br><span class="line">    <span class="comment">//将上述数据传输到Role对象中</span></span><br><span class="line">  System.out.println(roleService.getRoles().get(<span class="number">2</span>).getName()+<span class="string">":"</span>+roleService.getRoles().get(<span class="number">2</span>).getDesc());</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/19/day8/" data-id="ckd1edeen000qiwuxbuiw2jd9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-changliang" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/19/changliang/" class="article-date">
@@ -98,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckd0f4dc60000qouxas08hc6f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckd1edee50004iwux68ok0rkf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckd0f4ddb000tqouxbone3xno" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckd1edeep000tiwux7jlzcay0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckd0f4dd5000jqoux9ips6yx4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckd1edeek000kiwux4ldtaxt1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckd0f4dd5000hqoux1ua8abs5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckd1edeei000giwuxc3zh7r9j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +348,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckd0f4dd4000fqoux2sa1csf4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckd1edeeg000ciwuxeieaf4hk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,7 +400,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckd0f4dda000sqouxagq97shp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckd1edeeo000riwuxdqac2hoq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,7 +469,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckd0f4dd3000dqoux5krqc6ov" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckd1edeet000wiwux2va95wc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,7 +518,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckd0f4dd9000rqoux5xmh0lsy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckd1edeel000miwux5det8lvk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +559,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckd0f4dd2000bqoux8fqk2527" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day3/" data-id="ckd1edeed0009iwux25y31ocx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -540,7 +587,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li></ul>
     </div>
   </div>
 
@@ -550,7 +597,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a>
+      <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a>
     </div>
   </div>
 
@@ -572,6 +619,10 @@ public static void main(String[] args) {
       <ul>
         
           <li>
+            <a href="/2020/07/25/day16/">day16</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/24/day15/">day15</a>
           </li>
         
@@ -585,10 +636,6 @@ public static void main(String[] args) {
         
           <li>
             <a href="/2020/07/24/day13/">day13</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/24/day12/">day12</a>
           </li>
         
       </ul>
