@@ -64,6 +64,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-interface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/interface/" class="article-date">
+  <time datetime="2020-07-20T10:43:11.000Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/interface/">interface</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="接口类、接口体、接口方法的一些特性"><a href="#接口类、接口体、接口方法的一些特性" class="headerlink" title="接口类、接口体、接口方法的一些特性"></a>接口类、接口体、接口方法的一些特性</h2><ol>
+<li>Java不支持多重继bai承，du即一个类zhi只能有一个父类</li>
+</ol>
+<p>2.为了克服单继承的缺点，Java使用了接口，一个类可dao以实现多个接口</p>
+<p>3.接口是抽象方法和常量值定义的集合，是一种特殊的抽象类</p>
+<p>4.接口中只包含常量和方法的定义，没有变量和方法的实现</p>
+<p>5.接口中的所有方法都是抽象的</p>
+<p>6.接口中成员的访问类型都是public</p>
+<p>7.接口中的变量默认使用public static final标识(可以在定义的时候不加此修饰，系统默认)<br>8.接口通过使用关键字interface来声明格式：interface 接口的名字</p>
+<p>9.接口中可不写public，但在子类中实现接口的过程中public不可省</p>
+<p>接口体：</p>
+<ul>
+<li><p>接口体中包含常量定义和方法定义两部分</p>
+</li>
+<li><p>接口体中只进行方法的声明，不允许提供方法的实现</p>
+</li>
+<li><p>方法的定义没有方法体，且用分号结尾</p>
+<h3 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h3><p>一个抽象类中的所bai有方法都是抽象的,就可以将这个类用另外一种方式来定义dao,也就是接口定义。<br><strong>接口</strong>是<strong>抽象方法和常量值的定义的集合</strong>,从本质上讲，接口是一种<strong>特殊的抽象类</strong>,这种抽象类中<strong>只包含常量和方法的定义,而没有变量和方法的实现</strong>.**<br>可以使用extends来继承接口的常量和抽象方法，但它与类中的extends不同，它可以继承有多个父接口(多重继承)，各父接口间用逗号隔开。<br>接口中的所有常量必须是public static final，方法必须是public abstract，这是系统默认的，不管你在定义接口时，写不写修饰符都是一样的<br>定义接口<br>修饰符 interface 接口名 [extends 父接口列表]<br>{<br>常量域声明<br>抽象方法声明<br>}</p>
+</li>
+</ul>
+<h2 id="自定义异常-自定义异常类（ParamNullException）"><a href="#自定义异常-自定义异常类（ParamNullException）" class="headerlink" title="自定义异常-自定义异常类（ParamNullException）"></a>自定义异常-自定义异常类（ParamNullException）</h2><p><img src="https://style.youkeda.com/img/ham/course/j2/ParamNullException.svg" alt></p>
+<p>如上图，让我们来练习一下课程中的案例吧<br>注意，userService的调用数据是<br>userService. login(“xihongshi”, null);<br>我们预期的打印结果是:密码为空</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamNullException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ParamNullException</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ParamNullException</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(msg);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String nickName;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getNickName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> nickName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNickName</span><span class="params">(String nickName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.nickName = nickName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserName</span><span class="params">(String userName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userName = userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.User;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.exception.ParamNullException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * UserService</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">User <span class="title">login</span><span class="params">(String userName, String password)</span> <span class="keyword">throws</span> ParamNullException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.UserService;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.User;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.exception.ParamNullException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;User&gt; USERS = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setNickName(<span class="string">"爱吹风的牛"</span>);</span><br><span class="line">        user.setUserName(<span class="string">"niu"</span>);</span><br><span class="line">        user.setPassword(<span class="string">"Niu123"</span>);</span><br><span class="line">        USERS.add(user);</span><br><span class="line"></span><br><span class="line">        user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setNickName(<span class="string">"我爱西红柿"</span>);</span><br><span class="line">        user.setUserName(<span class="string">"xihongshi"</span>);</span><br><span class="line">        user.setPassword(<span class="string">"Didi5"</span>);</span><br><span class="line">        USERS.add(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(String userName, String password)</span> <span class="keyword">throws</span> ParamNullException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (userName == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ParamNullException(<span class="string">"用户名为空"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (password == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ParamNullException(<span class="string">"密码为空"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (User user : USERS) &#123;</span><br><span class="line">            <span class="keyword">if</span> (user.getUserName().equals(userName) &amp;&amp; user.getPassword().equals(password)) &#123;</span><br><span class="line">                <span class="keyword">return</span> user;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.User;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.UserService;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.impl.UserServiceImpl;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.exception.ParamNullException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 声明 user 变量</span></span><br><span class="line">        User user = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            user = userService.login(<span class="string">"xihongshi"</span>, <span class="keyword">null</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ParamNullException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">           </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>如.上面的代码，内部类的格式和普通的Java类并没有什么不同，只是它创建在一个class内,这样的类就是内部类。这里的<strong>InnerTool **我们称为</strong>内部类**; outer| 我们称为外部类。2如果我们想调用内部类，那么就需要先实例化它，于这个InnerTool内部类是存在| Outer 外部类内部的，所以实例化也只能在Outer 内院成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">    <span class="comment">//想调用先实例化</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> tool.add( tool.add(a,b) , c );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://style.youkeda.com/img/ham/course/j2/InnerTool.svg" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       OuterUtil outer = <span class="keyword">new</span> OuterUtil();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> sum = outer.add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">//执行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="访问实例内部类"><a href="#访问实例内部类" class="headerlink" title="访问实例内部类"></a>访问实例内部类</h3><p>内部类所属的外部类自然是可以调用这个内部类的，就如outerUtil 可以调用| InnerTool ，我们也可以把这个内部类叫做:实例内部类那么其他类如何调用内部类呢，比如OuterUtilTest 调用InnerTool因为我们的InnerTool 类的访问控制修饰符是public所以可以被外部的类访问，如果是private就不可以被外部访问了</p>
+<p>实例化外部类：` `` OuterUtil.InnerTool tool = new OuterUtil().new InnerTool();</p>
+<p><strong>约束</strong>： 实例内部类不能有静态变量</p>
+<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果我们声明为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import </span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><p>我们还可以在方法内部定义一个类，这个类就叫局部内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">            <span class="keyword">int</span> a;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        B b = <span class="keyword">new</span> B();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/interface/" data-id="ckdtk5sik001gc4uxf5827vod" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-day9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/20/day9/" class="article-date">
@@ -130,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/20/day9/" data-id="ckdsaa426001atkuxg640976j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/20/day9/" data-id="ckdtk5sk2001xc4ux9xy42h0c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/day8/" data-id="ckdsaa42x001stkux0a092z8n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/day8/" data-id="ckdtk5sil001hc4ux080sfr4j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckdsaa3zf0000tkuxh0mu1301" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/changliang/" data-id="ckdtk5sg30000c4uxdb81dgl3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckdsaa430001utkuxf6scfhmf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/19/super/" data-id="ckdtk5sin001lc4uxch6ohu4u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckdsaa4250018tkuxem7e3fi1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/16/day7/" data-id="ckdtk5sie0018c4uxa5h348rt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -352,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckdsaa41z0014tkux16a3ey1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/15/day6/" data-id="ckdtk5sij001dc4ux0lhbebiy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +509,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckdsaa41w000ztkuxbnom9yix" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/13/day5/" data-id="ckdtk5sic0014c4uxcwwehc0s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +561,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckdsaa42y001ttkux34xyfy3y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/publishblog/" data-id="ckdtk5sim001jc4uxgilzgls7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -545,56 +630,7 @@ public static void main(String[] args) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckdsaa41u000vtkuxfz3nbhoe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/10/hello-world/" class="article-date">
-  <time datetime="2020-07-10T05:00:38.008Z" itemprop="datePublished">2020-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckdsaa4210017tkux22fd6eol" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/10/day4/" data-id="ckdtk5sii001cc4ux2gxeg8rl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -622,7 +658,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" rel="tag">CSS定位（float）模态框 搜索框</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" rel="tag">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" rel="tag">css 定位- position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag">css盒模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序、选择排序、插入排序、二分插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E4%BA%91/" rel="tag">图云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">实战网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" rel="tag">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" rel="tag">背景颜色、 背景图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" rel="tag">递归、分治思想-归并排序、快速排序、快速选择</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" rel="tag">CSS定位（float）模态框 搜索框</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" rel="tag">CSS装饰-cutsor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" rel="tag">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" rel="tag">css 定位- position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag">css盒模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序、选择排序、插入排序、二分插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E4%BA%91/" rel="tag">图云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">实战网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" rel="tag">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" rel="tag">背景颜色、 背景图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" rel="tag">递归、分治思想-归并排序、快速排序、快速选择</a></li></ul>
     </div>
   </div>
 
@@ -632,7 +668,7 @@ public static void main(String[] args) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" style="font-size: 10px;">CSS定位（float）模态框 搜索框</a> <a href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" style="font-size: 10px;">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a> <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" style="font-size: 10px;">css 定位- position</a> <a href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">css盒模型</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">冒泡排序、选择排序、插入排序、二分插入排序</a> <a href="/tags/%E5%9B%BE%E4%BA%91/" style="font-size: 10px;">图云</a> <a href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">实战网易云音乐</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" style="font-size: 10px;">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 10px;">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a> <a href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" style="font-size: 10px;">背景颜色、 背景图片</a> <a href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" style="font-size: 10px;">递归、分治思想-归并排序、快速排序、快速选择</a>
+      <a href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" style="font-size: 10px;">CSS定位（float）模态框 搜索框</a> <a href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" style="font-size: 10px;">CSS装饰-cutsor</a> <a href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" style="font-size: 10px;">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a> <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" style="font-size: 10px;">css 定位- position</a> <a href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">css盒模型</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">冒泡排序、选择排序、插入排序、二分插入排序</a> <a href="/tags/%E5%9B%BE%E4%BA%91/" style="font-size: 10px;">图云</a> <a href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">实战网易云音乐</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" style="font-size: 10px;">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 10px;">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a> <a href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" style="font-size: 10px;">背景颜色、 背景图片</a> <a href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" style="font-size: 10px;">递归、分治思想-归并排序、快速排序、快速选择</a>
     </div>
   </div>
 
@@ -654,6 +690,10 @@ public static void main(String[] args) {
       <ul>
         
           <li>
+            <a href="/2020/08/13/day31/">day31</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/11/day30/">day30</a>
           </li>
         
@@ -667,10 +707,6 @@ public static void main(String[] args) {
         
           <li>
             <a href="/2020/08/08/day26/">day26</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/08/day25/">day25</a>
           </li>
         
       </ul>
