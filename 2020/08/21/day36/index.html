@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>day36 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="认识JavascriptJavaScript简单来说,就是-种专为与网页交互而设计的脚本语言，这是官方的一种说法,作为初学者，我们更关注的应该是效果，即什么东西可以实现什么效果。JavaScript主要由三部分组成:1.核心(ECMAScript)2.文档对象模型(DOM)3.浏览器对象模型(BOM)我们可以将这三部分当作三个部门，每个部门]都有自己的职责，首先我们来介绍核心(ECMAScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day36">
+<meta property="og:url" content="http://yoursite.com/2020/08/21/day36/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="认识JavascriptJavaScript简单来说,就是-种专为与网页交互而设计的脚本语言，这是官方的一种说法,作为初学者，我们更关注的应该是效果，即什么东西可以实现什么效果。JavaScript主要由三部分组成:1.核心(ECMAScript)2.文档对象模型(DOM)3.浏览器对象模型(BOM)我们可以将这三部分当作三个部门，每个部门]都有自己的职责，首先我们来介绍核心(ECMAScript">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png">
+<meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png">
+<meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png">
+<meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E8%BF%9B%E5%88%B6.png">
+<meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png">
+<meta property="article:published_time" content="2020-08-21T05:38:34.000Z">
+<meta property="article:modified_time" content="2020-08-21T12:46:12.485Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="javascript 、基础数据类型（变量、数值类型、类型转换&#x2F;字符串拼接、运算符）">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day36" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/21/day36/" class="article-date">
+  <time datetime="2020-08-21T05:38:34.000Z" itemprop="datePublished">2020-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      day36
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="认识Javascript"><a href="#认识Javascript" class="headerlink" title="认识Javascript"></a>认识Javascript</h2><p>JavaScript简单来说,就是<strong>-种专为与网页交互而设计的脚本语言</strong>，这是官方的一种说法,作为初学者，我们更关注的应该是效果，即什么东西可以实现什么效果。<br>JavaScript主要由三部分组成:<br><strong>1.核心(ECMAScript)</strong><br><strong>2.文档对象模型(DOM)</strong><br><strong>3.浏览器对象模型(BOM)</strong><br>我们可以将这三部分当作三个部门，每个部门]都有自己的职责，首先我们<br>来介绍核心(ECMAScript)。<br><strong>核心(ECMAScript)</strong><br>ECMAScript规定了这门语言的基本组成部分，主要有以下几个部分组<br>成:<br>●语法<br>●类型<br>●语句<br>●关键字<br>●保留字<br>●操作符在这里我们先不同去纠结这几部分到底是什么，在后面的课程中我们会逐<br>-学习到，在这里我们只要知道它们是JavaScript这门语言的基本组成<br>部分即可。<br>有了这些基本组成部分，JavaScript 就可以完成基本的逻辑以及数据处<br>理。<br><strong>文档对象模型(DOM)</strong><br>DOM的功能简单来说呢就是可以获取到我们写的所有的html标签,并给标签添加或者删除样式，并可以给标签添加事件(例如点击、拖动等)。这些功能的实现是基于下面几种接口的:<br><strong>●DOM遍历和范围</strong>:可以找到页面中所有 的标签;<br><strong>●DOM事件</strong>:例如给某个图片添加拖动事件,使图片可以随意拖动;<br><strong>●DOM样式</strong>:可以更改页面中所有元素的样式，例如更改某一 段文字的颜色。再次重申，这一节的内容目前都是用来了解的，不要深入研究</p>
+<p><strong>浏览器对象模型(BOM)</strong></p>
+<p><strong>BOM</strong>只会处理跟浏览器相关的东西,比如:<br>●弹出新窗口功能<br>●移动、缩放、关闭浏览器窗口的功能<br>●给用户提供显示器分辨率的功能<br>●提供浏览器信息<br>在初学JavaScript的时候，我们可能只会跟前两种打交道</p>
+<h4 id="JavaScript的书写位置"><a href="#JavaScript的书写位置" class="headerlink" title="JavaScript的书写位置"></a>JavaScript的书写位置</h4><p>JavaScript与CsSS的书写位置非常相似，分为HTML内部和外部</p>
+<p>JavaScript写在HTML内部<br>1.使用script标签嵌入JavaScript</p>
+<script></script>标签可以将JavaScript代码嵌入到HTML内部，
+
+<p>具体嵌入方式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// script标签嵌入JavaScript代码</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// JavaScript代码</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> name = <span class="string">"Bob"</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"我的名字叫："</span>+name);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，script 标签中间的代码大家不用去理解，后面我们会学到.<br>你或许会看到</p>
+<script type="text/javascript" charset="utf-8"></script> 这种
+<p>类型的<br>script标签，实它跟<script></script>标签是一样的，其中type=”text/javascript”代表&gt;文档类型是javascript类型,字符编解码方式是utf-8 .这两个暂时都不用去理解</p>
+<p>2.注意script标签在HTML文件中的位置</p>
+<p>这里我们强行规定- -个位置或者说这就是-种规范，即body标签的内部,并保证是在末尾，如下面的代码所示: </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 正常的html标签一定要写在script标签的前面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 在body标签的内部并在末尾 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>JavaScript写在HTML外部</strong><br>和CsS一样，在JavaScript中我们也是推崇代码分离的，即JavaScript代码写在xxx.js文件中，然后由引入标签去引入即可.这里的引入标签即script标签，不一样的是，在标签上多了一个src参<br>数，引入方式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'index.js'</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="JavaScript注释"><a href="#JavaScript注释" class="headerlink" title="JavaScript注释"></a>JavaScript注释</h4><p>JavaScript注释包括单行注释和块级注释.<br><strong>单行注释</strong><br>单行注释以两个斜杠开头,如下所示:➊<br>// 单行注舞<br><strong>块级注释</strong><br>块级注释以一个斜杠和两个星号开头，以一个星号和一-个斜杠结尾,如下<br>所示:➊<br>/*<br>*注释<br>*注释<br>*/</p>
+<p>注释的内容少，可以用单行注释,内容多，就使用块级注释.<br><strong>字符串</strong><br>什么是字符串呢?简单的说就是<strong>用引号引起来的就是字符串</strong>，这里的引号可以是单引号(“)也可以是双引号(“).</p>
+<p><strong>切记</strong>:输入引号的时候，- 定要切换为英文输入法.<br><strong>中文添加引号</strong><br>下面两种都是字符串:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 双引号 因为格式化的问题，必须加\，大家忽略\，就当"字符串"看待即可</span><br><span class="line">\"字符串\";</span><br><span class="line"></span><br><span class="line">// 单引号</span><br><span class="line">'字符串';</span><br></pre></td></tr></table></figure>
+
+<p><strong>英文添加引号</strong><br>下面两种都是字符串</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 双引号</span><br><span class="line">\"Tom\";</span><br><span class="line"></span><br><span class="line">// 单引号</span><br><span class="line">'Tom';</span><br></pre></td></tr></table></figure>
+
+<p><strong>字母添加引号</strong><br>字母在一些编程语言中被视为字符,在这里你可以将它视为字符串，下面<br>两种都是字符串:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 双引号</span><br><span class="line">\"T\";</span><br><span class="line"></span><br><span class="line">// 单引号</span><br><span class="line">'T';</span><br></pre></td></tr></table></figure>
+
+<p><strong>数字添加引号</strong><br>数字不添加引号的时候，不是字符串，但是添加了引号以后就会变成字符串</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 双引号</span><br><span class="line">\"12\";</span><br><span class="line"></span><br><span class="line">// 单引号</span><br><span class="line">'1';</span><br></pre></td></tr></table></figure>
+
+<h4 id="console访问控制台。"><a href="#console访问控制台。" class="headerlink" title="console访问控制台。"></a>console访问控制台。</h4><p>JavaScript与我们之前学习的HTML/CSS不一样的是，它的输出结果不是<br>在浏览器的页面中显示，而是在控制台中显示<br>console表示访问控制台，log() 表示在控制台输出信息，中间用点()<br>连接，完整的写法是:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log('要输出的内容');</span><br></pre></td></tr></table></figure>
+
+<p>大家不用纠结console.1og()是什么，因为这是浏览器内置对象，也就是浏览器自带的，我们只要记住这句话可以在控制台输出信息即可.将输出语句写在<br>script标签内，完整的写法如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>JavaScript代码写在HTML代码内部的写法如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>案例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 写在body的末尾 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">//"Hello World"是字符串,下面这句话表示在控制台输出Hello World</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，在index.js文件中写JavaScript代码的时候，是不需要加<br>script标签的，只有在HTML代码中才需要加script 标签.</p>
+<h3 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h3><p>在一般的字符串中，如果我们要将字符串和变量拼接起来，要用加号(+) 去拼接,例如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let firstName = '胡';</span><br><span class="line">let lastName = '雪岩';</span><br><span class="line"></span><br><span class="line">let say = '大家好，我姓' + firstName + '，名' + lastName;</span><br><span class="line"></span><br><span class="line">console.log(say);</span><br></pre></td></tr></table></figure>
+
+<p>可以看的出，这个写法非常的繁琐，模版字符串就可以简化书写，模版字.符串的核心是反引号(“)和占位符${expression}],反引号的作用是将字符串和变量包起来，占位符的作用就是在字符串中插入变量，比如上面的代码我们可以使用模版字符串来进行改造:。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let firstName = '胡';</span><br><span class="line">let lastName = '雪岩';</span><br><span class="line"></span><br><span class="line">let say = `大家好，我姓$&#123;firstName&#125;，名$&#123;lastName&#125;`;</span><br><span class="line"></span><br><span class="line">console.log(say);</span><br></pre></td></tr></table></figure>
+
+<p><strong>转义符()</strong><br>转义符在模版字符串和一般的字符串中都很常见，比如说我们要写下面这<br>段代码:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let str = '华为正式发布操作系统---"鸿蒙OS"';</span><br><span class="line">console.log(str);</span><br></pre></td></tr></table></figure>
+
+<p>这样的写法是错误的，但是我们就想在双引号里面写双引号，怎么办呢?<br>这里就要用到转义符() ，在前后双引号前面添加一一个转义符() ,代<br>码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let str = '华为正式发布操作系统---"鸿蒙OS"';</span><br><span class="line">console.log(str);</span><br></pre></td></tr></table></figure>
+
+<p>这里因为文档格式化的原因,没办法写出转义符号，实应该是这样的“华为正式发布操作系统— “鸿蒙OS’<br>同样的，如果我们想要在模版字符串中使用反引号(“) ，也可以在模版字符串中的前面添加一个转义符() ，如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let firstName = '胡';</span><br><span class="line">let lastName = '雪岩';</span><br><span class="line"></span><br><span class="line">let say = `大家好，我姓$&#123;firstName&#125;，名$&#123;lastName&#125;，喜欢\`看书\``;</span><br><span class="line"></span><br><span class="line">console.log(say);</span><br></pre></td></tr></table></figure>
+
+<p><strong>多行字符串拼接</strong><br>再比如我们要输出一首古诗，使用一般的字符串我们就要用到\n来换<br>行，代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let str = '春眠不觉晓\n' + '处处闻啼鸟\n' + '夜来风雨声\n' + '花落知多少\n';</span><br><span class="line">console.log(str);</span><br></pre></td></tr></table></figure>
+
+<p>但是使用模版字符串，只需要回车就好，代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let str = `春眠不觉晓</span><br><span class="line">处处闻啼鸟</span><br><span class="line">夜来风雨声</span><br><span class="line">花落知多少`;</span><br><span class="line"></span><br><span class="line">console.log(str);</span><br></pre></td></tr></table></figure>
+
+<p><strong>在字符串中使用表达式</strong><br>在以前我们要在一个字符串中使用表达式，我们要去拼接这个表达式，具<br>体做法如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let number1 = 20;</span><br><span class="line">let number2 = 10;</span><br><span class="line">console.log(</span><br><span class="line">  '两个数的和是：' +</span><br><span class="line">    (number1 + number2) +</span><br><span class="line">    '\n两个数的差是：' +</span><br><span class="line">    (number1 - number2) +</span><br><span class="line">    '。'</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>同样，这种做法就很繁琐,首先加号和引号太多了,输入成本太高，这时<br>候我们就可以充分利用占位符(${expression)) 来做点文章,改写如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let number1 = 20;</span><br><span class="line">let number2 = 10;</span><br><span class="line">console.log(`两个数的和是：$&#123;number1 + number2&#125; </span><br><span class="line">两个数的差是：$&#123;number1 - number2&#125; 。`);</span><br></pre></td></tr></table></figure>
+
+<p><strong>模版字符串中使用三元表达式</strong><br>这里我们就不去管字符串拼接的表达式了，直接使用模版字符串来写三元<br>表达式，先写一个最简单的:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = `这里是$&#123;false ? '浙江' : '江苏'&#125;`;</span><br><span class="line"></span><br><span class="line">console.log(str); // 江苏</span><br></pre></td></tr></table></figure>
+
+<p>很容易可以看的出，输出结果是江苏，那么我们做更深一步的书写，加大<br>难度:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = `这里是$&#123;false ? '浙江' : `江苏-$&#123;true ? '南京' : '常州'&#125;`&#125;`;</span><br><span class="line"></span><br><span class="line">console.log(str); // 这里是江苏-南京</span><br></pre></td></tr></table></figure>
+
+<p>可以发现，在三元表达式中，我们只要添加了一个占位符<br>(${expression})之后，就要再添加一-组反引号(“) 来包裹。我们将上<br>面的代码梳理一下 :</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let str = `这里是$&#123;false ? '浙江' : `江苏-$&#123;true ? '南京' : '常州'&#125;`&#125;`;</span><br></pre></td></tr></table></figure>
+
+<p>这样看起来是不是就比较容易理解呢?<br>那么此时我们如果要再添加一组占位符($lexpression) 呢?<br>首先将浙江’的单引号改成反引号<br>;浙江~;<br>然后添加占位符(${expression))<br>、 浙江–${}’<br>占位符里写三元表达式<br>i 浙江–${true ? ‘杭州’ :‘丽水’小;<br>ok,替换一下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let str = `这里是$&#123;</span><br><span class="line">  true ? `浙江--$&#123;true ? '杭州' : '丽水'&#125;` : `江苏-$&#123;true ? '南京' : '常州'&#125;`</span><br><span class="line">&#125;`;</span><br><span class="line"></span><br><span class="line">console.log(str); // 这里是浙江--杭州</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景一</strong><br>熟练了这种应用以后呢，我们要结合实际工作来做点文章，给个场景吧,<br>大家知道，-个class后面是可以跟多个类名的，类名不同，样式不同，<br>比如说class = “base hover” ,<br>当然我们这个场景不会这么简单，我们的场景是根据屏幕的宽度来动态的<br>改样式，这里就可以用模版字符串:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 定义屏幕的宽度，当然这个宽度是根据window的api去获取的</span><br><span class="line">let screen = 760;</span><br><span class="line"></span><br><span class="line">// 判断屏幕是大屏还是小屏，这里我们认为大于760px的就是大屏</span><br><span class="line">function isLargeScreen() &#123;</span><br><span class="line">  return screen &gt; 800;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 定义元素的排列方式，大屏row排列，小屏column排列</span><br><span class="line">// 具体什么排列方式，是根据屏幕大小决定的</span><br><span class="line">let item = &#123;</span><br><span class="line">  isCollapsed: screen &gt; 800,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 这里我们就要根据上面的信息来动态的获取类名（多个）</span><br><span class="line">const classes = `header $&#123;</span><br><span class="line">  isLargeScreen() ? '' : `icon-$&#123;item.isColumn ? 'column' : 'row'&#125;`</span><br><span class="line">&#125;`;</span><br><span class="line"></span><br><span class="line">console.log(classes);</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用场景二</strong><br>再比如我们后面会在js代码中组装HTML代码，然后显示在屏幕中:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let htmlCode = `</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">''</span> /&gt;</span></span><br><span class="line">    $&#123;</span><br><span class="line">      true</span><br><span class="line">        ? `<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg'</span> /&gt;</span>`</span><br><span class="line">        : `<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">''</span> /&gt;</span>`</span><br><span class="line">    &#125;</span><br><span class="line">`;</span><br><span class="line">console.log(htmlCode);</span><br><span class="line">// <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">''</span> /&gt;</span></span><br><span class="line">//    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg'</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p><strong>变量就是保存值的占位符</strong>，它的作用与二元一次方程的未知数x或y -样，用来临时保存值的.<br>在JavaScript中定义变量的关键字(编程语言中特定的单词)有两个，即<strong>let、const .</strong></p>
+<p><strong>使用let定义变量</strong><br>定义变量的格式如下图所示:</p>
+<p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png" alt></p>
+<p>●关键字:编程语言中特定的单词;<br>●变量名:于保存值的占位符;<br>●赋值符号:将值赋给变量的符号;<br>下面来定义一个变量并在控制台输出，核心代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name = 'Will Smith';</span><br><span class="line">console.log(name);</span><br></pre></td></tr></table></figure>
+
+<p>其实.上面的代码包含了两步:<br>1.定义变量<br>2.给变量赋值<br><strong>1.定义变量</strong><br>定义一个变量名为name的变量:</p>
+<p>// 定义一个变量名为name的变量<br>let name;</p>
+<p>注意:<br>let声明变量的时候，不能重复声明同名变量，例如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let number = 20;</span><br><span class="line">let number = 30;</span><br></pre></td></tr></table></figure>
+
+<p>上面这段代码运行的时候会报如下错误: .<br><strong>Uncaught SyntaxError: Identifier ‘ number’ has already been decl ared</strong>  这句话的意思是number 这个变量已经被声明过了.<br>当然如果是在不同的作用域内声明相同变量，可以的，暂时我们还遇不到这种情况，遇到的时候会讲</p>
+<h4 id="2-给变量赋值"><a href="#2-给变量赋值" class="headerlink" title="2.给变量赋值"></a>2.给变量赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义变量</span></span><br><span class="line"><span class="keyword">let</span> name;</span><br><span class="line"><span class="comment">//给变量赋值</span></span><br><span class="line">name = <span class="string">"Will Smith"</span>;</span><br><span class="line"><span class="comment">//输出变量</span></span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br></pre></td></tr></table></figure>
+
+<p>注意:<br>1.在使用console. log()输出变量的时候，并没有加引号(“).<br>2.使用变量一 定要在定义变量之后，例如下面这种方式会报错:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// name还未定义和赋值就使用，报错</span></span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'Will Smith'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>正确的写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确输出</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'Will Smith'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br></pre></td></tr></table></figure>
+
+<p>或许你们会在其它资料中看到定义变量的关键字var，这是一种过时的定义变量的关键字，因为它会导致很多未知的错误，所以现在已经不常用了，大家可以忽略.</p>
+<h4 id="使用const定义变量"><a href="#使用const定义变量" class="headerlink" title="使用const定义变量"></a>使用const定义变量</h4><p>const定义变量的方式和let一样,如下图所示:</p>
+<p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png" alt></p>
+<p>const的用法也和let是一样的，在这里我们就不做过多解释，下面我们<br>主要讨论的是const和let在定义变量的时候，有什么不同.</p>
+<h4 id="let和const异同点"><a href="#let和const异同点" class="headerlink" title="let和const异同点- -:"></a>let和const异同点- -:</h4><p>let定义的变量可以被多次重新赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">'Bob'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// Bob</span></span><br><span class="line"></span><br><span class="line">name = <span class="string">'Tom'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// Tom</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>异同点二:<br>let定义变量的时候，可以不赋初始值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age;</span><br><span class="line"><span class="built_in">console</span>.log(age); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+
+<p>const 定义变量的时候，要赋初始值，否则会报错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age; <span class="comment">// 报错</span></span><br><span class="line"><span class="built_in">console</span>.log(age);  <span class="comment">// 不执行</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h1><p>常用的数值类型主要包括<strong>整数,浮点数(你可以理解为小数)和NaN(Not a</strong><br><strong>Number非数值)</strong>,当然还有其它类型的-些数值我们作为了解来学习.<br><strong>整数</strong><br>JavaScript中的整数和数学中的整数是一样的,是正整数、零、负整数的<br>集合,一般来说，我们所接触的整数都是十进制的，例如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="number">8</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png" alt></p>
+<p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E8%BF%9B%E5%88%B6.png" alt></p>
+<p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png" alt></p>
+<p><strong>浮点数</strong><br>浮点数值必须包含一个小数点, 并且小数点后面至少有一位数字 小数点前<br>面可以没有数字，但是不推荐这种写法.<br>下面是几种常见的浮点数值:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> floatNumber1 = <span class="number">2.0</span>;</span><br><span class="line"><span class="keyword">let</span> floatNumber2 = <span class="number">0.4</span>;</span><br><span class="line"><span class="keyword">let</span> floatNumber3 = <span class="number">.2</span>; <span class="comment">// 正确，但是不推荐</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>浮点数的精度丢失现象</strong><br>浮点数值的最高精度是17位小数，但是在算数运算当中其精度远不如整数.<br>例如，0.1 加0.2的结果不是0.3:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">0.2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number1 + number2); <span class="comment">// 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<p>这段代码的意思就是如果a+b=0.3,那么就在控制台输出“输出成功”四个字.<br>因为0.1+0.2本来的确等于0.3,因为精度丢失成了<br>0.3000000000000004，所以本来应该成立的判断条件却不成立了.</p>
+<h4 id="Na-N"><a href="#Na-N" class="headerlink" title="Na N"></a>Na N</h4><p><strong>NaN(Not a Number)即非数值.</strong><br>简单来说，就是两个变量执行了一个运算,例如+、-、*、/当中的<br>-种，返回的结果仍然是数字类型，但是执行的数学运算没有成功.例如: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'number'</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> c = a / b;</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出运算结果</span></span><br><span class="line"><span class="built_in">console</span>.log(a+b);</span><br><span class="line"><span class="comment">// 判断结果类型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> (a+b))</span><br></pre></td></tr></table></figure>
+
+<h1 id="类型转换-字符串拼接"><a href="#类型转换-字符串拼接" class="headerlink" title="类型转换/字符串拼接"></a>类型转换/字符串拼接</h1><p>类型转换主要包括两种,隐式转换和强制类型转换.<br><strong>隐式转换</strong><br>●<strong>数字字符串加数字,数字隐式转换为字符串</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">20</span>+<span class="string">'20'</span>); <span class="comment">// 2020</span></span><br><span class="line"><span class="comment">// 调换位置亦可</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'20'</span>+<span class="number">20</span>); <span class="comment">// 2020</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数字字符串与数字做非加法运算,字符串隐式转换为数字</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'20'</span><span class="number">-10</span>); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span>*<span class="string">'10'</span>); <span class="comment">// 100</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span>/<span class="string">'2'</span>); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数字字符串与数字字符串做非加法运算,隐式转换为数字</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'20'</span>-<span class="string">'10'</span>); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'20'</span>/<span class="string">'10'</span>); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'20'</span>*<span class="string">'10'</span>); <span class="comment">// 200</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h4><p>强制类型转换我们需要学习两个,parselnt(将小数字符串、整数字符串或<br>者小数转换为整数)、parseFloat(将小数字符 串转换为小数).②</p>
+<h4 id="parselnt"><a href="#parselnt" class="headerlink" title="parselnt"></a>parselnt</h4><p>●<strong>整数字符串转换为整数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">let</span> number = <span class="string">'20'</span>;</span><br><span class="line"><span class="comment">//  将number转换为整数类型</span></span><br><span class="line"><span class="keyword">let</span> converNumber = <span class="built_in">parseInt</span>(number);</span><br><span class="line"><span class="built_in">console</span>.log(converNumber); <span class="comment">// 20</span></span><br><span class="line"><span class="comment">// 判断转换后的数据类型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> converNumber); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>小数字符串转换为小数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="string">'20.5'</span>;</span><br><span class="line"><span class="keyword">let</span> converNumber = <span class="built_in">parseInt</span>(number);</span><br><span class="line"><span class="built_in">console</span>.log(converNumber); <span class="comment">// 20  不足21一律按照20算</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> converNumber); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>小数转换为整数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="number">20.5</span>;</span><br><span class="line"><span class="keyword">let</span> converNumber = <span class="built_in">parseInt</span>(number);</span><br><span class="line"><span class="built_in">console</span>.log(converNumber); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat"></a>parseFloat</h3><p><strong>将小数字符串转换为小数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="string">'20.9'</span>;</span><br><span class="line"><span class="keyword">let</span> converNumber = <span class="built_in">parseFloat</span>(number);</span><br><span class="line"><span class="built_in">console</span>.log(converNumber); <span class="comment">// 20.9</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> converNumber); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><p>字符串拼接主要是为了有格式的在控制台输出一些信息，比如我们之前写的<br>代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="string">'20.9'</span>;</span><br><span class="line"><span class="keyword">let</span> converNumber = <span class="built_in">parseFloat</span>(number);</span><br><span class="line"><span class="built_in">console</span>.log(converNumber); <span class="comment">// 20.9</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> converNumber); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<p>我们更希望输出的结果是这样:<br>转换后的结果是:20.9<br>转换后的数字类型是: number 类型<br>此时我们就需要字符串拼接技术来实现<br>字符串拼接使用的符号是+ (加号)<br>字符串用引号引起来，单双引不做要求,但是要对应,不能是前半部分单<br>引号后半部分双引号,如(“).<br>变量名不能用引号,如果变量名在字符串中间，可以用加号和引号区分<br>开,例如(“我的名字: “+name+”,谢谢”).</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'转换后的结果是：'</span> + converNumber);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'转换后的数字类型是：'</span> + <span class="keyword">typeof</span> converNumber + <span class="string">'类型'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>字符串拼接不仅仅是在console中使用,也可以在变量中使用,例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'小李子'</span>;</span><br><span class="line"><span class="keyword">let</span> output = <span class="string">'我叫：'</span>+name+<span class="string">',今年'</span>+age+<span class="string">'岁了'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码案例-1"><a href="#代码案例-1" class="headerlink" title="代码案例"></a>代码案例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"30"</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="string">"40"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字符串转换成数字并输出到控制台</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="built_in">parseInt</span>(a);</span><br><span class="line"><span class="keyword">let</span> d =<span class="built_in">parseInt</span>(b);</span><br><span class="line"><span class="keyword">let</span> e =<span class="built_in">parseInt</span>(c+d)</span><br><span class="line"><span class="built_in">console</span>.log(e)</span><br></pre></td></tr></table></figure>
+
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p><strong>相等/全等</strong><br>在编程语言里我们会经常去做值的判断,比如判断两个值是否相同,这时候<br>就要用到相等(= =)和全等(===)运算符，这两个运算符的区别是前者只判断<br>值是否相同，后者在此基础上还要判断类型是否相同.<br>举个例子来说明一下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="number">45</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">45</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number1 == number2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>如我们所预料的一样,45 和 45 是相等的,所以最后输出了true,接下来我们使用全等(===)符号来做一次判断.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="number">45</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">45</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number1 === number2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码似乎开始不符合我们的常规思想了，一个是字符串,一个是数字怎么会相等呢?<br>我们之前学习过<strong>隐式类型转换</strong>,在这里做比较的时候会首先将45’转换为45,然后再去跟number2比较,这就等同于下面的代码: .</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="number">45</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">45</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number1 == number2);</span><br></pre></td></tr></table></figure>
+
+<p>同样的比较,如果做全等(===)比较,结果却不相同,代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="string">'45'</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">45</span>;</span><br><span class="line"><span class="built_in">console</span>.log(number1 === number2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自增-自减"><a href="#自增-自减" class="headerlink" title="自增/自减."></a>自增/自减.</h4><p>什么是自增自减呢?举个例子比如说我在卖气球，我本来有10个气球,手理有0元,每卖出去一一个气球,手里就多2元,那么对于气球来说,就是自减,对于我手里的钱来说就是自增用代码表示就是:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> balloon = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> money = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 卖出去第一个</span></span><br><span class="line">balloon = balloon - <span class="number">1</span>; <span class="comment">// 9</span></span><br><span class="line">money = money + <span class="number">2</span>; <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 卖出去第二个</span></span><br><span class="line">balloon = balloon - <span class="number">1</span>; <span class="comment">// 8</span></span><br><span class="line">money = money + <span class="number">2</span>; <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// .....</span></span><br><span class="line"><span class="comment">// 以此类推</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>写成：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> balloon = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> money = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">balloon--;</span><br><span class="line">money++;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'第一次递减后的结果：'</span> + balloon);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'第一次递增后的结果：'</span> + money);</span><br><span class="line"></span><br><span class="line">balloon--;</span><br><span class="line">money++;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'第二次递减后的结果：'</span> + balloon);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'第二次递增后的结果：'</span> + money);</span><br></pre></td></tr></table></figure>
+
+<p>判断两个数字的类型和值是否相等，并在控制台输出结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number1 = <span class="string">"90"</span>;</span><br><span class="line"><span class="keyword">let</span> number2 = <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断两个数字是否相等，并在控制台输出结果</span></span><br><span class="line"><span class="built_in">console</span>.log(number1===number2)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/21/day36/" data-id="cke48a0vh0018mkux4tfc0ynp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" rel="tag">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/20/day35/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day35</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" rel="tag">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" rel="tag">CSS定位（float）模态框 搜索框</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" rel="tag">CSS装饰-cutsor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" rel="tag">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" rel="tag">SCSS 、 变量 、 嵌套 、mixin/include</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" rel="tag">css 定位- position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag">css盒模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" rel="tag">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序、选择排序、插入排序、二分插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" rel="tag">响应式布局、媒体查询、断点 、 实战微博个人页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E4%BA%91/" rel="tag">图云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">实战网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" rel="tag">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" rel="tag">背景颜色、 背景图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" rel="tag">递归、分治思想-归并排序、快速排序、快速选择</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" style="font-size: 10px;">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a> <a href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" style="font-size: 10px;">CSS定位（float）模态框 搜索框</a> <a href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" style="font-size: 10px;">CSS装饰-cutsor</a> <a href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" style="font-size: 10px;">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a> <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" style="font-size: 10px;">SCSS 、 变量 、 嵌套 、mixin/include</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" style="font-size: 10px;">css 定位- position</a> <a href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">css盒模型</a> <a href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" style="font-size: 10px;">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">冒泡排序、选择排序、插入排序、二分插入排序</a> <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" style="font-size: 10px;">响应式布局、媒体查询、断点 、 实战微博个人页</a> <a href="/tags/%E5%9B%BE%E4%BA%91/" style="font-size: 10px;">图云</a> <a href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">实战网易云音乐</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" style="font-size: 10px;">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 10px;">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a> <a href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" style="font-size: 10px;">背景颜色、 背景图片</a> <a href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" style="font-size: 10px;">递归、分治思想-归并排序、快速排序、快速选择</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/21/day36/">day36</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/20/day35/">day35</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/17/day34/">day34</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/16/day33/">day33</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/day32/">day32</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
