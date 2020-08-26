@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>day39 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数概述上个章节中我们学习了用循环处理数组中的元素，比如找到第一个被5整除的数字，但是每次要处理一个新的数组就需要把代码重新写一遍，这样工作量很大，怎么办呢?JavaScript和其他编程语言一样，我们可以使用函数来解决这个问题。函数是一段可以反复调用的代码块，往往能够实现一个特定的功能。它可以解决代码重复的问题。在JavaScript中，函数是头等(first-class)对象，有时我们也可称其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day39">
+<meta property="og:url" content="http://yoursite.com/2020/08/23/day39/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数概述上个章节中我们学习了用循环处理数组中的元素，比如找到第一个被5整除的数字，但是每次要处理一个新的数组就需要把代码重新写一遍，这样工作量很大，怎么办呢?JavaScript和其他编程语言一样，我们可以使用函数来解决这个问题。函数是一段可以反复调用的代码块，往往能够实现一个特定的功能。它可以解决代码重复的问题。在JavaScript中，函数是头等(first-class)对象，有时我们也可称其">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/1.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/2.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/3.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/4.jpg">
+<meta property="article:published_time" content="2020-08-23T06:50:34.000Z">
+<meta property="article:modified_time" content="2020-08-26T12:17:59.142Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="函数">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day39" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/23/day39/" class="article-date">
+  <time datetime="2020-08-23T06:50:34.000Z" itemprop="datePublished">2020-08-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      day39
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数概述"><a href="#函数概述" class="headerlink" title="函数概述"></a>函数概述</h2><p>上个章节中我们学习了用循环处理数组中的元素，比如找到第一个被5整除的数字，但是每次要处理一个新的数组就需要把代码重新写一遍，这样工作量很大，怎么办呢?JavaScript和其他编程语言一样，我们可以使用函数来解决这个问题。函数是一段可以反复调用的代码块，往往能够实现一个特定的功能。它可以解决代码重复的问题。在JavaScript中，函数是头等(first-class)对象，有时我们也可称其为方法。我们可以把要重复调用的代码块写成一个函数，这样就可以在每次需要实现对应功能的时候，调用这个函数。比如你晚上回到家，要吃晚饭，那你需要”洗菜”、“切菜”、“炒菜”、“装盘”，然后才能吃。然后早上起来，要吃早餐，又要”洗菜”、“切菜”、“炒菜”、“装盘”，然后才能吃。现在你把这个过程取个名字叫”做菜”，告诉给家政阿姨。<br>每次要吃饭了就跟阿姨说:“阿姨，麻烦去′做菜′吧。”，阿姨就会执行上述步骤帮你把菜做好。</p>
+<p>这个“做菜”，就是一个函数，“洗菜”、“切菜”、“炒菜”、“装盘”就是函数里的代码块，通过调用“做菜”这个函数，可以重复执行函数中的代码。这章节，在学习如何自定义函数之前，先来看看JavaScript中的一个<br>内置函数Math.random()。这个函数大家应该不会陌生，java里也有个差不多的函数。<br><strong>获取随机数Math.random()</strong><br>下面这句代码中的Math.random()就是js 的内置函数。Math是一个<br>内置对象，用于执行数学任务。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num=<span class="built_in">Math</span> .random( ) ;</span><br></pre></td></tr></table></figure>
+
+
+<p>通过上面这行代码，我们可以获得一个范围在[O，1)之间的随机数。即<br>从o(包括O）往上，但是不包括1(排除1)。<br>如果我们要获取一个三位数随机数，即范围在[100,1000)之间，那么<br>我们可以这么做:</p>
+<p>1.先获取[0，1000)之间的随机数:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="built_in">Math</span>.random() * <span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.再获取[100,1000）之间的随机数<br>要获取[100,1000)的数，那么Math.random()应该属于[0.1，1)。<br>我们处理一下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// num1 的范围是 [0.1, 1)</span></span><br><span class="line"><span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line"><span class="comment">// num2 的范围是 [100, 1000)</span></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用内置的Math中的方法获取一个两位数随机数，即范围在[10,100)之间。可以参考—下文档中生成[100,1000)之间随机数的方法哦。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// num1 的范围是 [0.1, 1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// num2 的范围是 [10, 100)</span></span><br><span class="line"><span class="comment">// num1 的范围是 [0.1, 1)</span></span><br><span class="line"><span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span>+ <span class="number">0.1</span>;</span><br><span class="line"><span class="comment">// num2 的范围是 [100, 1000)</span></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><p>如果我们要多次生成三位数随机数，那么就需要写很多次下面这段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// num1 的范围是 [0.1, 1)</span></span><br><span class="line"><span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line"><span class="comment">// num2 的范围是 [100, 1000)</span></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br></pre></td></tr></table></figure>
+
+<p>这样不但工作量大，代码看起来也会凌乱。其实JavaScript和其他编程语言一样，可以自定义函数。我们可以用自定义函数来解决代码复用的问题。自定义函数是需要自行声明的，我们先来看函数的声明。函数的声明<br>js中函数声明有三种方法，这里我们主要讲两种:function命令和函数表达式。</p>
+<p><strong>函数的声明</strong><br>js中函数声明有三种方法，这里我们主要讲两种: function命令和函数<br>表达式。<br><strong>1．用function命令声明</strong><br>用function命令声明函数的格式如下:</p>
+<p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/1.jpg" alt></p>
+<p>上面的代码声明了一个名为”print”的自定义函数，它的作用是打印一段<br>文本，文本内容为”JavaScript真有趣”。<br>大括号“t”中的内容就是每次调用该函数的时候会被执行的代码块，也<br>称函数体。<br>要注意，用function命令声明函数有四个东西缺─不可:<br><strong>1.关键词”function” ;</strong><br><strong>2.函数名”print”，当然，这个名称是自己取的;</strong><br><strong>3.函数名之后的小括号”()”;</strong><br><strong>4.包裹函数体用的大括号””，“”中可以没有代码;</strong><br>函数名往往和函数的功能有关系，一般我们用小驼峰命名法来给函数<br>命名。小驼峰命名法:第一个单词首字母小写，后面其他单词首字母<br>大写。比如: firstName、checkFirstName等。</p>
+<h4 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h4><p>现在，我们通过函数名来调用上面这个“print”函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(); <span class="comment">// 调用格式为：函数名 + ()</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-用函数表达式声明"><a href="#2-用函数表达式声明" class="headerlink" title="2.用函数表达式声明"></a>2.用函数表达式声明</h4><p>除了用function命令声明函数，还可以采用变量赋值的写法。<br>函数表达式声明函数的格式如下:</p>
+<p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/2.jpg" alt></p>
+<p>这种写法将一个匿名函数赋值给变量。赋值等号右边为匿名函数，又称<br>函数表达式。注意，采用函数表达式声明函数时，function命令后面不带有函数名。调用的时候和用function命令声明的函数调用一样，函数名＋()。这里的函数名指的是变量名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print();</span><br></pre></td></tr></table></figure>
+
+<p>es6 中函数表达式声明可以用箭头函数简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> print = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"JavaScript 真有趣"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数声明的提升"><a href="#函数声明的提升" class="headerlink" title="函数声明的提升"></a>函数声明的提升</h3><p>采用function命令声明函数时，整个函数会被提升到代码头部。所以，<br>下面的代码不会报错:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，看起来函数f的调用在前，声明在后，但其实因为用<br>function命令声明函数时函数声明会被提升到代码头部，所以上面的代<br>码相当于:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 被提升到头部</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+
+<h3 id="两种声明方式的区别"><a href="#两种声明方式的区别" class="headerlink" title="两种声明方式的区别"></a>两种声明方式的区别</h3><p>1.结尾的大括号后是否需要加”;”:function命令声明:结尾的大括号后不需要加”;”函数表达式:结尾的大括号后需要加”;”<br>2.有无声明提升:function命令声明:有提升;函数表达式:没有提升;</p>
+<p>因为函数表达式是一个表达式，所以要加”;””。总的来说两种声明方式的<br>区别还是比较小的。<br>注意:以上代码中的符号，比如引号、括号、分号等均为英文状态下<br>的符号。</p>
+<h3 id="函数的重复声明"><a href="#函数的重复声明" class="headerlink" title="函数的重复声明"></a>函数的重复声明</h3><p>如果同一个函数被多次声明，后面的声明就会覆盖前面的声明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"JavaScript 真有趣"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"JavaScript 真有趣...个鬼嘞"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print();</span><br></pre></td></tr></table></figure>
+
+<p>运行结果:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 真有趣...个鬼嘞</span><br></pre></td></tr></table></figure>
+
+<p>前一次声明在任何时候都是无效的，这—点要特别注意。<br><strong>立即执行函数</strong><br>当函数只使用一次时，通常使用lFE (Immediately Invokable Function<br>Expressions):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"这个函数只执行一次"</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>它会在函数声明后立即调用函数，除这一次调用外因为是匿名函数，所<br>以无从调用。<br>lIFE大家了解即可。</p>
+<h4 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h4><p>要求写—个生成六位随机数的自定义函数，并调用一次函数。<br>函数能够生成一个六位随机数，并用console.log将其打印出来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明函数 code</span></span><br><span class="line"><span class="comment">// num1 的范围是 [0.1, 1)</span></span><br><span class="line"><span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line"><span class="comment">// num2 的范围是 [100, 1000)</span></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">1000000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用函数 code</span></span><br><span class="line">code();</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><p>我们用function命令声明生成六位随机数的函数，它是这样写的:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">1000000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那如果我们要生成四位随机数，只需要在num2的计算中做小小的修<br>改就可以了:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样，我们需要把const num2 = Math.floor(num1 * 10000);这句之外的其他代码原样抄写—遍。这就很不帅气。我们希望这个函数能够根据我们给出的“位数”要求，生成合适的随机数。那我们要怎么把要求给到函数呢?很简单，我们可以通过参数给函数传数据:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在圆括号运算符中加入参数 figure，用来接收外部传入的数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不要忘记调用函数，调用函数后函数才会执行</span></span><br><span class="line">code(<span class="number">4</span>);</span><br><span class="line">code(<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<p>打印结果:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6750</span></span><br><span class="line"><span class="number">905910</span></span><br></pre></td></tr></table></figure>
+
+<p>上面Math.pow(x,y)是js内置方法，求取x的y次幂。比如，Math.pow(10,4)的计算结果为10000。o<br>上面代码中的figure就是函数的参数，这个参数接收外部传给函数的数据，传入的数据不同函数运行后得到的结果可能不同。点击播放上述代码:</p>
+<h3 id="多个参数"><a href="#多个参数" class="headerlink" title="多个参数"></a>多个参数</h3><p>函数可以接受多个参数，多个参数以””(英文逗号)分隔:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数) txt(文本) </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure, txt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(txt + num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">code(<span class="number">6</span>, <span class="string">"六位随机数："</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上述函数接受两个参数: figure和txt。在调用的时候，我们传入了两个数据:6和”六位随机数:”。<br>通过打印结果，我们可以知道: figure对应6，txt 对应“六位随机数:”。<br>即，<strong>调用函数时，需要按顺序传入数据。</strong>那如果参数数量和传入数量不匹配会发生什么呢?<br><strong>参数数量和传入数量不匹配</strong><br>如果传入的数据个数超过了函数的参数:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数) txt(文本) </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure, txt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(txt, num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">code(<span class="number">6</span>, <span class="string">"六位随机数："</span>, <span class="string">"第三个参数"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果并没有受到影响，这是因为<strong>JavaScript允许传入任意个参数而不</strong><br><strong>影响调用</strong>，因此传入的参数比定义的参数多也没有问题。这一点和Java有区别，在JavaScript中这样是不会报错的。如果传入的数据比定义的参数少也不会因为数量不匹配而报错:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数) txt(文本) </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure, txt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(txt, num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">code(<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<p>因为对应的参数txt未传入数据，所以在函数中其值为undefined。<br><strong>参数默认值</strong><br>像上面传入的数据的个数比定义的参数少的情况，很容易出现运行结果<br>与预期不符的情况，为了防止这种问题，我们可以给参数设置默认值:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数) txt(文本) </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure, txt = <span class="string">"随机数："</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(txt, num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">code(<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码案例-1"><a href="#代码案例-1" class="headerlink" title="代码案例"></a>代码案例</h4><p>要求写一个函数，可以接受一个参数，根据传入的参数，计算1+2 + …n的值，n的值即参数值，并将结果用console.log打印。比如，传入4，则计算1 +2 ＋3＋4的值，则打印出10。<br>调用:调用两次，第一次参数为10，第二次为20。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">   a=a+i;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sum(<span class="number">10</span>);</span><br><span class="line">sum(<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="二"><a href="#二" class="headerlink" title="二"></a>二</h5><p>声明一个名为padZeros的函数，用来格式化数字，用О在左侧补位，<br>使产生的字符串达到给定的长度，如果原数字长度超出给定长度则不作<br>处理。比如:<br>数字42，长度5，打印出:00042;<br>数字123，长度3，打印出:123;<br>数字1234，长度3，打印出:1234;<br>用户可以传入需要格式化的数字和格式化后的长度，函数将根据这两个<br>值运算得到一个字符串，并打印出来。<br>要求调用函数三次:<br>padZeros(42，5);<br>padZeros(123，3);<br>padZeros(1234，3);</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">padZeros</span>(<span class="params">num, totalLen</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 将数字转为字符串</span></span><br><span class="line">    <span class="keyword">let</span> numStr = num.toString();</span><br><span class="line">  <span class="comment">// 计算所需 0 的个数</span></span><br><span class="line">    a=totalLen- numStr.length;</span><br><span class="line">    n = numStr.padStart(totalLen,<span class="string">'0'</span>);</span><br><span class="line">  <span class="comment">// 用 0 补</span></span><br><span class="line">  <span class="comment">// 打印得到的结果</span></span><br><span class="line">   <span class="built_in">console</span>.log(n);</span><br><span class="line">&#125;</span><br><span class="line">padZeros(<span class="number">42</span>, <span class="number">5</span>);</span><br><span class="line">padZeros(<span class="number">123</span>, <span class="number">3</span>);</span><br><span class="line">padZeros(<span class="number">1234</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><p>和其他编程语言一样，js 中函数可以分为“无返回值”和“有返回值”两种，之前我们写的自定义函数都是无返回值函数，这里我们要来讲讲有返回值函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="built_in">Math</span>.random();</span><br></pre></td></tr></table></figure>
+
+<p>Math.random()就是一个有返回值的内置函数，它会返回生成的随机数。现在我们改造一下之前写的可定制位数的随机数函数，写个有返回值的<br>自定义函数:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用“return”把生成的随机数作为函数的结果返回</span></span><br><span class="line">  <span class="keyword">return</span> num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = code(<span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+
+<p>运行结果:<br>556540<br>这里我们用”return”把生成的随机数作为函数的返回值返回，然后把返回值赋给了变量<br>result，再打印result，得到的就是”556540”这个结果。<br>函数是否需要返回值是看实际需求的，如果我们只是为了看看生成的随机数，完全可以直接在<br>函数中打印出来。<br>但如果我们要拿这个随机数做验证码的话，后续还要根据这个随机数对用户输入的内容进行验<br>证的话，就需要写个变量把随机数保存起来了:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用户输入的验证码</span></span><br><span class="line"><span class="keyword">let</span> userCode = <span class="number">682314</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数 figure(位数)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = code(<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后续的验证</span></span><br><span class="line"><span class="keyword">if</span> (result === userCode) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"验证码正确"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"验证码错误"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上面的例子中我们知道，在函数中使用return可以返回return语句所带的那个表达式。<br>那如果在return语句之后，还有别的语句，这些语句还会执行吗?<br>答案是不会。</p>
+<h4 id="函数中return后的语句将不会执行"><a href="#函数中return后的语句将不会执行" class="headerlink" title="函数中return后的语句将不会执行"></a>函数中return后的语句将不会执行</h4><p>我们来看一个例子:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数 figure(位数)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">code</span>(<span class="params">figure</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> num1 = <span class="built_in">Math</span>.random() * <span class="number">0.9</span> + <span class="number">0.1</span>;</span><br><span class="line">  <span class="keyword">const</span> num2 = <span class="built_in">Math</span>.floor(num1 * <span class="built_in">Math</span>.pow(<span class="number">10</span>, figure));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> num2;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"return 之后的语句"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = code(<span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+
+<p>注意:在函数中遇到return语句，就直接返回return后面的那个表达式的值，后面即使还有<br>语句，也不会被执行。</p>
+<h4 id="代码案例："><a href="#代码案例：" class="headerlink" title="代码案例："></a>代码案例：</h4><p>要求写一个求绝对值的函数。函数名请命名为”abs”。如果传入的不是数字，请用console.log<br>打印提示“传入的内容不是一个数字”。<br>比如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">abs(<span class="number">20</span>); <span class="comment">// 返回20</span></span><br><span class="line">abs(<span class="number">-10</span>); <span class="comment">// 返回10</span></span><br><span class="line">abs(<span class="number">0</span>); <span class="comment">// 返回0</span></span><br><span class="line">abs(<span class="string">'str'</span>);<span class="comment">// 传入的内容不是一个数字</span></span><br></pre></td></tr></table></figure>
+
+<p>数据类型判断可以使用 typeof：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">typeof</span> num; <span class="comment">// number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"优课达"</span>;</span><br><span class="line"><span class="keyword">typeof</span> str; <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> num === <span class="string">'number'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> num===<span class="string">'number'</span>) &#123;</span><br><span class="line"><span class="keyword">if</span>(num&lt;<span class="number">0</span>)&#123;</span><br><span class="line">  num=num<span class="number">-2</span>*num;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'传入的内容不是一个数字'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(abs(<span class="number">20</span>));</span><br><span class="line"><span class="built_in">console</span>.log(abs(<span class="number">-10</span>));</span><br><span class="line"><span class="built_in">console</span>.log(abs(<span class="number">0</span>));</span><br><span class="line">abs(<span class="string">'str'</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="二-1"><a href="#二-1" class="headerlink" title="二"></a>二</h3><p>已知斐波那契数列的定义是第一项第二项是1，从第三项开始每一项都是之前两项的和，求第<br>30个斐波那契数。<br>之前我们计算的时候是用循环做的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> num1=<span class="number">1</span>,num2=<span class="number">1</span>,num3;</span><br><span class="line">        <span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            num3=num1+num2;</span><br><span class="line">            num1=num2;</span><br><span class="line">            num2=num3;</span><br><span class="line">            arr.push(num3);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> num = fib(<span class="number">30</span>);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="内置函数——计时器1"><a href="#内置函数——计时器1" class="headerlink" title="内置函数——计时器1"></a>内置函数——计时器1</h1><p>我们常在注册、登录时遇到验证手机号的情况，点击获取验证码之后，为了防止用户频繁获取验证码，我们会在点击获取后开始倒计时60s，在这段时间里<br>用户不能再次获取验证码。倒计时每一秒会更新一下，这个可以用js提供的定时执行代码函数<br>setTimeout()和setInterval()来完成。这个定时执行代码的功能，叫做定时器<br>(timer) 。</p>
+<h4 id="延时执行setTimeout"><a href="#延时执行setTimeout" class="headerlink" title="延时执行setTimeout()"></a>延时执行setTimeout()</h4><p>setTimeout函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回<br>一个整数，表示定时器的编号，以后可以用来取消这个定时器。<br>setTimeout函数基础语法如下:</p>
+<p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/3.jpg" alt></p>
+<p>setTimeout函数接受两个参数，第一个参数func|code是将要推迟执行的函<br>数名或者一段代码，第二个参数delay是推迟执行的毫秒数。<br>以下是setTimeout的三种写法，大家关注它第一个参数的写法和运行顺序:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 第一个参数是代码，注意代码需用引号包裹，否则会立即执行代码</span></span><br><span class="line"><span class="comment"> * 第二个参数是 1000，即 1000ms 后执行 console.log(2)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">setTimeout(<span class="string">'console.log(2)'</span>, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 第一个参数是匿名函数</span></span><br><span class="line"><span class="comment"> * 第二个参数是 2000，即 2s 后执行 console.log(3)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一个参数是函数名，注意函数名后不要加小括号“()”，否则会立即执行 print4</span></span><br><span class="line">setTimeout(print4, <span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>观察上述代码运行顺序:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 立即执行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 立即执行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">// 1s 后执行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 2s 后执行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// 3s 后执行</span></span><br><span class="line">print4(); <span class="comment">// 即：console.log(4)</span></span><br></pre></td></tr></table></figure>
+
+<p>从运行结果可以看出，setTimeout可以指定某个函数或某段代码，在多少毫秒<br>之后执行，执行一次。<br>现在我们用setTimeout来做验证码的60s倒计时，目标效果是每隔—秒打印<br>出剩余秒数。<br>虽然setTimeout只能执行一次，但是我们可以用递归的方式来写计时器。<br>注意，函数可以调用本身，这就是递归(recursion) 。<br>每隔一秒会执行一次代码，每次执行的代码要能够:<br>1.打印剩余秒数;<br>2.将秒数减—;<br>3.如果剩余秒数&gt;0，则调用setTimeout在一秒后重复上述的1、2、3，否则不<br>再调用，并清除计时器，即计时结束;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先定义计时总秒数，单位 s</span></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义变量用来储存定时器的编号</span></span><br><span class="line"><span class="keyword">let</span> timerId;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写一个函数，这个函数即每次要执行的代码，能够完成上述的 1、2、3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i--;</span><br><span class="line">  <span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    timerId = setTimeout(count, <span class="number">1000</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 清除计时器</span></span><br><span class="line">    clearTimeout(timerId);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首次调用该函数，开始第一次计时</span></span><br><span class="line">count();</span><br></pre></td></tr></table></figure>
+
+<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p>用生活中当例子来解释回调函数就是:<br>你去商店预定中秋的月饼，预定的时候留下了你的手机号。等月饼到货后，店<br>员给你打电话通知你去取。<br>手机号:回调函数;<br>到货:触发回调函数的具体条件;<br>到货后给你打电话:调用回调函数;<br>上面讲到的定时器setTimeout的第一个参数即“回调函数”，我们把函数指针<br>(指向函数的指针变量）作为参数传给setTimeout，当延时时间到了(触发条<br>件达成）之后，就会通过函数指针调用函数，即调用回调函数。<br>除了定时器setTimeout中会用到回调函数，其实在实际开发中，我们也常会<br>遇到要用回调函数的时候。</p>
+<pre><code>### 代码案例</code></pre><p>写一个正整数的计时器，每隔一秒打印出0到10。代码运行后立即打印出o，第<br>一秒后打印出1，第二秒后打印出2，最后打印出10。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先定义计时开始的数字</span></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写一个函数，这个函数即每次要执行的代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 打印计时数字</span></span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line"><span class="keyword">let</span> timerId;</span><br><span class="line">  <span class="comment">// 每执行一次计时数字要加一</span></span><br><span class="line">i++;</span><br><span class="line">  <span class="comment">// 判断是否要继续执行打印函数</span></span><br><span class="line"><span class="keyword">if</span>(i&lt;=<span class="number">10</span>)&#123;</span><br><span class="line">  timerId = setTimeout(print,<span class="number">1000</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  clearTimeout(timerId);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首次调用该函数，开始第一次打印</span></span><br><span class="line">print();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先定义计时总秒数，单位 s</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="内置函数–计时器二"><a href="#内置函数–计时器二" class="headerlink" title="内置函数–计时器二"></a>内置函数–计时器二</h1><p>下面我们来看setInterval，它的用法与setTimeout完全一致，区别仅仅在于<br>setInterval指定某个任务每隔一段时间就执行一次，也就是无限次的定时执<br>行。③<br><strong>无限调用setlnterval</strong><br>setlnterval函数基础语法如下:!</p>
+<p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/4.jpg" alt></p>
+<p>现在我们用 setInterval 来实现隔 1s 打印数字 1：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> timer = setInterval(print, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，上述代码能够每隔1s打印数字1，但是这离我们的计时器还有三个<br>地方需要改进:<br>1.上述代码是在1s后开始第一次打印，而计时器是立即进行第一次打印(打印<br>60) ，1s后再进行第二次打印的;<br>2.每次打印的数字是不同的;<br>3.计时器是有限次数，不是无限调用;<br>要做到第一个点很容易，调整代码执行顺序如下即可:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print();</span><br><span class="line"><span class="keyword">let</span> timer = setInterval(print, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在实现第二点，我们参考setTimeout的写法，先定义计时总秒数，每执行<br>一次打印就将秒数减一即可:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">60</span>;</span><br><span class="line">print();</span><br><span class="line"><span class="keyword">let</span> timer = setInterval(print, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在我们来解决第三个问题，这个问题也是比较容易的，当i减少到О的时<br>候，应该停止再次调用print方法，即清除计时器，我们用以下语句来清除计<br>时器:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearInterval(timer);</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">60</span>;</span><br><span class="line">print();</span><br><span class="line"><span class="keyword">let</span> timer = setInterval(print, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i--;</span><br><span class="line">  <span class="keyword">if</span> (i &lt; <span class="number">1</span>) &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码案例-2"><a href="#代码案例-2" class="headerlink" title="代码案例"></a>代码案例</h3><p>写一个正整数的计时器，每隔一秒打印出О到10。代码运行后立即打印出0，第<br>—秒后打印出1，第二秒后打印出2，最后打印出10。<br>要求使用setlnterval实现上述功能。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">print();</span><br><span class="line"><span class="keyword">let</span> timer = setInterval(print, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i++;</span><br><span class="line">  <span class="keyword">if</span> (i &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/23/day39/" data-id="ckebchaiv0018j4uxasok5fhr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/22/day38/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day38</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" rel="tag">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" rel="tag">CSS定位（float）模态框 搜索框</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" rel="tag">CSS装饰-cutsor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" rel="tag">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" rel="tag">SCSS 、 变量 、 嵌套 、mixin/include</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" rel="tag">css 定位- position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag">css盒模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" rel="tag">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E5%BE%AA%E7%8E%AF/" rel="tag">javascript 循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E3%80%81%E6%95%B0%E7%BB%84/" rel="tag">javascript布尔类型、条件判断、数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序、选择排序、插入排序、二分插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" rel="tag">响应式布局、媒体查询、断点 、 实战微博个人页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E4%BA%91/" rel="tag">图云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">实战网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" rel="tag">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" rel="tag">背景颜色、 背景图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" rel="tag">递归、分治思想-归并排序、快速排序、快速选择</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" style="font-size: 10px;">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a> <a href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" style="font-size: 10px;">CSS定位（float）模态框 搜索框</a> <a href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" style="font-size: 10px;">CSS装饰-cutsor</a> <a href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" style="font-size: 10px;">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a> <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" style="font-size: 10px;">SCSS 、 变量 、 嵌套 、mixin/include</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" style="font-size: 10px;">css 定位- position</a> <a href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">css盒模型</a> <a href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" style="font-size: 10px;">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a> <a href="/tags/javascript-%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">javascript 循环</a> <a href="/tags/javascript%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E3%80%81%E6%95%B0%E7%BB%84/" style="font-size: 10px;">javascript布尔类型、条件判断、数组</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">冒泡排序、选择排序、插入排序、二分插入排序</a> <a href="/tags/%E5%87%BD%E6%95%B0/" style="font-size: 10px;">函数</a> <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" style="font-size: 10px;">响应式布局、媒体查询、断点 、 实战微博个人页</a> <a href="/tags/%E5%9B%BE%E4%BA%91/" style="font-size: 10px;">图云</a> <a href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">实战网易云音乐</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" style="font-size: 10px;">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 10px;">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a> <a href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" style="font-size: 10px;">背景颜色、 背景图片</a> <a href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" style="font-size: 10px;">递归、分治思想-归并排序、快速排序、快速选择</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/23/day39/">day39</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/22/day38/">day38</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/21/day37/">day37</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/21/day36/">day36</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/20/day35/">day35</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
