@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>day52 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="随着Spring 体系的不断庞大，加上现代互联网应用体积庞大，构建一个应用还是非常困难的，Spring 团队重新打造了一个新的面向微服务的框架Spring Boot。  严格来说Spring Boot不能是一个框架，它更是一个方案，Spring 工程的快速上手方案，它极大的降低了Java Web工程的创建和运行和部署的难度。在过去这些都是Java工程师的老大难，所以说Spring Boot的出现就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day52">
+<meta property="og:url" content="http://yoursite.com/2020/09/12/day52/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="随着Spring 体系的不断庞大，加上现代互联网应用体积庞大，构建一个应用还是非常困难的，Spring 团队重新打造了一个新的面向微服务的框架Spring Boot。  严格来说Spring Boot不能是一个框架，它更是一个方案，Spring 工程的快速上手方案，它极大的降低了Java Web工程的创建和运行和部署的难度。在过去这些都是Java工程师的老大难，所以说Spring Boot的出现就">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/springboot_logo.png">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/springmvc1.svg">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/hellohtml.png">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/hello.html2.png">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/baidu1.png">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/url.svg">
+<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j4/studentapi.svg">
+<meta property="article:published_time" content="2020-09-12T05:49:45.000Z">
+<meta property="article:modified_time" content="2020-09-13T12:06:59.731Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Spring MVC、Spring BOOT、Spring Controllr、Get Request">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://style.youkeda.com/img/ham/course/j4/springboot_logo.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day52" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/12/day52/" class="article-date">
+  <time datetime="2020-09-12T05:49:45.000Z" itemprop="datePublished">2020-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      day52
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着Spring 体系的不断庞大，加上现代互联网应用体积庞大，构建一个应用还是非常困难的，Spring 团队重新打造了一个新的面向微服务的框架Spring Boot。</p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/springboot_logo.png" alt></p>
+<p>严格来说<strong>Spring Boot不能是一个框架，它更是一个方案</strong>，Spring 工程的快速上手方案，它极大的降低了Java Web工程的创建和运行和部署的难度。在过去这些都是Java工程师的老大难，所以说Spring Boot的出<br>现就立马一统江湖了。②<br><strong>Spring Boot的核心还是Spring</strong>(所以你也无需单独去管理Spring 的Maven依赖），只是多了一些工程化的方案:<br>. 比如说Java Web容器的嵌入集成（所以有了Spring Boot，就不再<br>需要额外部署Tomcat 这类服务器啦)，Spring Boot 默认集成了<br>Tomcat。<br>. Spring Boot 还自定义了工程打包格式，通过这个直接就把一个Java<br>Web工程转化成普通的Java工程，启动一个main方法就可以把<br>. Spring工程启动起来，所以这也极大的降低了开发难度。<br>Spring Boot默认集成了你能想到的第三方框架和服务，比如数据库<br>连接、NoSQL、安全等等，开发者再也不用关心复杂的Maven依赖<br>了，开箱即用</p>
+<p> . Spring Boot 还提供了标准的属性配置文件，支持应用的参数动态配<br>置，这也让代码运行更加的灵活强大。</p>
+<p>总之spring Boot让Java更容易，让Java更流行，这是一个巨大的贡献。它完全颠覆了过去很多人对Java的认知，因为开发Java Web 变的格外容易，在Spring Boot出现之后，开发一个网站、API及其的容易，<br>这是一个巨大的进步。每个Java工程师都应该必须掌握它。Spring Boot 还有很多其他特性，我们会慢慢了解它。spring Boot版本更新比较快，所以选择最新的即可，现在最新的是2.2.x版本,一般我们会选用RELEASE版本。</p>
+<h4 id="创建Spring-Boot工程"><a href="#创建Spring-Boot工程" class="headerlink" title="创建Spring Boot工程"></a>创建Spring Boot工程</h4><p>现在让我们创建一个Spring Boot的工程，官方提供了一个网站<br><a href="https://start.spring.io/可以直接创建，大家可以观看下面的视频。在之" target="_blank" rel="noopener">https://start.spring.io/可以直接创建，大家可以观看下面的视频。在之</a><br>后的课程里，我们默认帮助大家创建好了Spring Boot工程。</p>
+<p>注意:仔细看视频的操作，创建工程的时候还需要选择Web依赖哦，选择了Web就会自动集成好了Web服务容器，要不然会出问题的哦</p>
+<h4 id="运行Spring-Boot工程"><a href="#运行Spring-Boot工程" class="headerlink" title="运行Spring Boot工程"></a>运行Spring Boot工程</h4><p>现在我们在演示一下运行Spring Boot工程的效果，注意Spring Boot默认集成了Web，所以可以通过网页访问的哦<br>为了让程序可以被网络可以访问(真实的互联网网络)，我们在云端做了动态的服务部署，所以访问的方式和普通网站—样</p>
+<h1 id="Spring-Controller-入门"><a href="#Spring-Controller-入门" class="headerlink" title="Spring Controller 入门"></a>Spring Controller 入门</h1><p>通过Spring Boot，我们就已经快速的搞定了Spring MVC工程。所以<br>我们开始正式的去学习Spring MVC啦! Spring MVC是Java Web的—种实现框架(Java Web有好些个实现框架，我们不用管其他的)再啰嗦一下，Java Web的规范就是Servlet 技术，所以所有的JavaWeb 都实现了Servlet API的定义我们终于到了Java技术最关键的里程碑啦，由此开启Java Web之路!!!</p>
+<p><strong>理解 Web 服务</strong></p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/springmvc1.svg" alt></p>
+<p>基本上所有的网页加载都是这样的一个过程。在Spring Boot方案里，<br>一个网页请求到了服务器后，首先我们进入的是Java Web服务器，然<br>后进入到Spring Boot应用，最后匹配到某一个Spring Controller<br>(这其实也是一个Spring Bean)，然后路由到具体某一个Bean的方<br>法，执行完后返回结果，输出到客户端来。<br>从这个流程里可以看出，其实我们只要掌握Spring Controller就可以自己提供Web服务啦</p>
+<p>Spring Controller 技术有三个核心点:<br>Bean的配置:Controller注解运用<br>网络资源的加载:加载网页<br>网址路由的配置:RequestMapping 注解运用</p>
+<ol>
+<li>Controller注解<br>Spring Controller本身也是一个Spring Bean,只是它多提供了Web能<br>力。我们只需要在类上提供一个@Controller注解就可以啦</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如.上面代码所示，这就是一-个Spring Controller,注意这个注解别忘记添<br>加，很多新手经常漏掉了<br>我们前面说过Spring大多数是基于接口开发的，但是没有接口也是可<br>以工作的。Spring Controller -般情况下不需要特意实现接口</p>
+<p>以工作的。Spring Controller一般情况下不需要特意实现接[</p>
+<h4 id="2-加载网页"><a href="#2-加载网页" class="headerlink" title="2.加载网页"></a>2.加载网页</h4><p>在Spring Boot 应用中，-般把网页存放在 src/main/resources/static 绿下，如下图</p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/hellohtml.png" alt></p>
+<p>在controller中，会自动加载static下的html内容，所以通过Spring<br>Boot建设网站也非常简单</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意看_上面的代码的say方法,<br>●i.定义返回类型为String<br>●ii.| <strong>return “hello. html</strong>“返回的是html文件路径<br>当执行这段代码的时候，Spring Boot实际加载的是<br><strong>src/main/ resources/static/hello. html</strong>文件<br>我们前面学习过，resouces 属于classpath类型的文件，Spring Boot很<br>强大，自动帮我们做了加载，所以我们只需要写hello.html 即可<br>「注意， 文件路径不需要额外添加static 哦<br>我们看一下hello.html文件</p>
+<h4 id="2-1-static-子目录"><a href="#2-1-static-子目录" class="headerlink" title="2.1 static 子目录"></a>2.1 static 子目录</h4><p>前面我们说过return语句返回的是static目录下的文件，现在如果我们的<br>html文件存放在s<strong>rc/main/resources/static/html/hello. html</strong></p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/hello.html2.png" alt></p>
+<p>那么我们的代码应该是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"html/hello.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>RequestMapping注解<br>学过Java网络的同学应该知道HTTP URL (网址)的规范,之前我们看<br>到的都是从浏览器或者客户端去请求URL,那么从Web服务端角度去看<br>呢?<br>对于Web服务器来说，必须要实现的一个能力就是解析URL,并提供资源内容给调用者。这个过程一般我们称为<strong>路由</strong>。<br>路由这个概念最早应该是来源于路由器，这个涉及到计算机网络系统了，超出我们的理解，大家暂时就不要去关联理解啦<br>Spring MVC完美的支持了路由能力，组简化了路由配置，只需要在需<br>要提供Web访问的方法上添加一一个<strong>@RequestMapping</strong> 注解就可以完成<br>配置啦,比如</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"html/hello.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后还有一个规范需要大家知道，-般情况下， 我们会把controller 类存放在 <strong>control</strong>子包里，比如我们这里的<strong>fm. douban. app . control</strong></p>
+<h2 id="Spring-Controller-代码案例"><a href="#Spring-Controller-代码案例" class="headerlink" title="Spring Controller 代码案例"></a>Spring Controller 代码案例</h2><p>增加fm. douban.app. control. SongListControl参考课程例子，在SongListControl类中增加index方法<br>。index 方法返回的内容为html/songList. html<br>。index 方法的RequestMapping值为songlist</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"> <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="Get-Request-一"><a href="#Get-Request-一" class="headerlink" title="Get Request(一)"></a>Get Request(一)</h1><p>在Http网络当中，最常用的两个协议是<br>●get<br>●post .<br>平常我们浏览网站、看视频、看图片使用的都是get协议,现在让我们看一下如何使用 Spring MVC支持Http服务端get协议<br>实际上， 上节课我们学习到的技术就是get协议<br>通过get协议,我们可以动态的渲染网页,在上节课的基础上我们还需要掌握get请求参数的解析,通过获取参数我们可以获取完成特定的代码逻辑<br>●比如我们访问<a href="https://www" target="_blank" rel="noopener">https://www</a>. baidu. com/s ?wd=test，我们可以得到如下的内容</p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/baidu1.png" alt></p>
+<p>大家应该发现同一个网址<a href="https://www" target="_blank" rel="noopener">https://www</a>. baidu.com/s，只是换了参数值，内容显示就不同了，这项技术就是URL参数解析，这也是get request必须要掌握的能力如果对网址的格式不太熟悉，可以看下图</p>
+<p><img src="https://style.youkeda.com/img/ham/course/j4/url.svg" alt></p>
+<h4 id="获取Http-URL参数"><a href="#获取Http-URL参数" class="headerlink" title="获取Http URL参数"></a>获取Http URL参数</h4><p>每个Http URL都可以设定自定义的参数，就像上面百度URL中的wd一样,这个就是百度自定义的<br><strong>需求</strong><br>现在我们自定义一下歌单的参数,我们希望可以根据歌单参数访问到不同的歌单页面。<br>如果要解决这个需求，我们需要先定义一个能够表达歌单的参数。前面定义歌单领域模型的时候，我们知道歌单的id是可以索引到唯一一个歌单的， 所以我们可以用这个参数来作为URL参数,那么结合之前的课程，我们的歌单URL应该是这样的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//域名/songlist?id=xxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你在本地电脑开发，那可能是这样的的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:8080/songlist?id=xxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>优课达学习平台自动做了域名的处理，所以大家运行完程<br>后，可以通过特定的域名访问你的程序</p>
+<h2 id="定义参数"><a href="#定义参数" class="headerlink" title="定义参数"></a>定义参数</h2><p>在Spring MVC中，定义一个URL参数也非常重要,只需要<br>我们在方法上面添加对应的参数和参数注解就可以了，可以<br>看一下下面的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">( @RequestParam(<span class="string">"id"</span>)</span> String id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码也很简单,大家可以仔细看看，我们在之前代码的<br>基础上添加了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestParam</span>(<span class="string">"id"</span>) String id</span><br></pre></td></tr></table></figure>
+
+<p>请注意RequestParam注解的参数”id”这个值必须要和URL的param key- -样哦，因为我们在urI中定义的是id,所.以这里写id。<br>如果我们的访问URL是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//域名/songlist?listId=xxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>那么代码应该是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">( @RequestParam(<span class="string">"listId"</span>)</span> String id)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大家注意这个要求哦，很多新手经常在这里放错误<strong>RequestParam注解的包路径</strong>是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.web.bind.annotation.RequestParam</span><br></pre></td></tr></table></figure>
+
+<p>于Spring MVC的注解都是在<br><strong>org. springframework. web . bind . annotation</strong>包内，</p>
+<p>所以我们import的时候，直接用<br><strong>import org. springframework.web. bind. annotation.*;</strong>了，这样省却了很多导入的工作e<br>现在我们演示一下程序，大家注意看看浏览器的网址哦。为了测试，我们的URL是:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//xxx.agent.youkeda.com/songlist?id=38672180</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">( @RequestParam(<span class="string">"id"</span>)</span> String id )</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"url 传递的id参数："</span>+id);    </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这说明，我们确实从URL里获取到了id参数值啦。需要注意的是默认情况下，URL的参数传递到服务器端都<br>是变成字符串的，所以使用String来获取参数值肯定没问题.</p>
+<h2 id="操作参数"><a href="#操作参数" class="headerlink" title="操作参数"></a>操作参数</h2><p>现在我们完善一下代码逻辑， 我们都知道访问不同的歌单网<br>址,打开的就是不同的歌单页面，所以在这里，我们模拟一<br>下行为，根据歌单id选择页面<br>由于我们还没有学习动态渲染页面，所以这里我们就硬编<br>码两个HTML页面作为不同的歌单页面<br>在上面代码的基础上，我们添加一一个分支:如果没有找到歌<br>单则显示404页面<br>-般找不到内容的页面都是404错误页面，这个是规范</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">( @RequestParam(<span class="string">"id"</span>)</span> String id)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"38672180"</span>.equals(id))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"html/404.html"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么我们应该访问到的是404错误页面啦,我们运行看看我们在工程里已经创建 了一个简单的404.html啦<br>现在我们改成这个URL运行调用看看</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">( @RequestParam(<span class="string">"id"</span>)</span> String id )</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"38672180"</span>.equals(id)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">        &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">"html/404.html"</span>;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取多个参数"><a href="#获取多个参数" class="headerlink" title="获取多个参数"></a>获取多个参数</h2><p>获取多个参数非常容易，就是添加多个参数就可以啦。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SongListControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@RequestMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> String id,  @<span class="title">RequestParam</span><span class="params">(<span class="string">"pageNum"</span>)</span> <span class="keyword">int</span> pageNum)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>基础的boolean、int、 String 数据类型是可以直接自动转化的，所以上面的<strong>页数参数</strong>使用了int<br>如果我们在Request方法声明了多个参数，那么URL访问的时候就必须要传递该参数哦，要不然会访问不到的</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>当我们掌握了Spring Request请求，基本上就打开了Web编程的大门了，因为所有的网站和程序都是通过这个技术来搭建的，只是不同的系统代码逻辑复杂度不一样。学会Request操作并不复杂，但是灵活运用还是需要大量练习的，所以大家也可以自己写写例子，多思考</p>
+<h1 id="Get-Request-二"><a href="#Get-Request-二" class="headerlink" title="Get Request(二)"></a>Get Request(二)</h1><h2 id="GetMapping"><a href="#GetMapping" class="headerlink" title="GetMapping"></a>GetMapping</h2><p><strong>@GetMapping</strong><br>我们在一开始学习了<strong>@RequestMapping</strong> 注解用于解析URL请求路径，这个注解默认是支持所有的Http Method的。放开所有的Http Method这样不是很安全，一般我们还是会明确制定method,比如说get请求我们可以使用<strong>@GetMapping</strong>来替换注解<strong>@RequestMapping</strong>他们的包路径是-样的，我们之前的代码可以写成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> String id,@<span class="title">RequestParam</span><span class="params">(<span class="string">"pageNum"</span>)</span> <span class="keyword">int</span> pageNum)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过如下的URL进行访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//xxxx/songlist?id=xxx&amp;pageNum=1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>多个参数使用<strong>&amp;</strong>分隔哦</p>
+<h4 id="非必须传递参数"><a href="#非必须传递参数" class="headerlink" title="非必须传递参数"></a>非必须传递参数</h4><p>默认情况下，访问的URL中必须包含我们在Request服务里设定的参数，上一节我们也提到过<br>如果不想某个参数必须传递,那么你可以修改一下参数的注解.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/songlist"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(@RequestParam(name=<span class="string">"pageNum"</span>,required = <span class="keyword">false</span>)</span> <span class="keyword">int</span> pageNum,@<span class="title">RequestParam</span><span class="params">(<span class="string">"id"</span>)</span> String id)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"html/songList.html"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大家仔细看一下，应该会发现下面的代码写法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestParam</span>(name=<span class="string">"pageNum"</span>,required = <span class="keyword">false</span>) <span class="keyword">int</span> pageNum</span><br></pre></td></tr></table></figure>
+
+<p>这个从单词上也能猜的出来，当前参数的名称是 <strong>pageNum ,required = false</strong> 表示为不是必须的,一旦我们这样设置后。下面的两个URL请求都是可以的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//xxxx/songlist?id=xxx&amp;pageNum=1</span></span><br><span class="line"></span><br><span class="line">http:<span class="comment">//xxxx/songlist?id=xxx</span></span><br></pre></td></tr></table></figure>
+
+<p>到了这里，可能大家会有一个疑问，方法定义参数的顺序和URL的参数顺序有没有关系呢?没有关系，参数的顺序无所谓的<br>非必须参数使用频率一般，大家在之后遇到这样的需求的时候，可以回到这里看看课程就好啦。</p>
+<h4 id="输出JSON数据"><a href="#输出JSON数据" class="headerlink" title="输出JSON数据"></a>输出JSON数据</h4><p>我们前面的例子都是返回HTML内容,但是有的时候作为服务端，我们只想返回数据，目前来说通用的Web数据格式就是JSON,在Spring当中配置JSON数据非常非常简单，如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/api/foos"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getFoos</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> String id) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"ID: "</span> + id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>字符串也是JSON数据的一种，大家应该看见了，我们在<strong>getFoos</strong>方法上增加了<strong>@ResponseBody</strong>注解，这个注解的包和RequestParam包-样的，我们可以运行看一看效果我们调用的url是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//xxxx/api/foos?id=100</span></span><br></pre></td></tr></table></figure>
+
+<p>我们在试试返回Java对象的方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String id;</span><br><span class="line">  <span class="keyword">private</span> Stirng name;</span><br><span class="line">  <span class="comment">// 省略了 getter、setter</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserControl</span></span>&#123;</span><br><span class="line">  <span class="comment">//缓存 User 数据</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,User&gt; users = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 初始化数据 </span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@PostConstruct</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    User user = <span class="keyword">new</span> User();</span><br><span class="line">    user.setId(<span class="string">"100"</span>);</span><br><span class="line">    user.setName(<span class="string">"ykd"</span>);</span><br><span class="line">    users.put(user.getId(),user);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/api/user"</span>)</span><br><span class="line">  <span class="meta">@ResponseBody</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> String id) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> users.get(id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你会发现Spring MVC会自动的把对象转化成JSON字符串输出到网页了，这也是Spring MVC比较强大和方便的地方，<strong>一般我们会把这种输出JSON数据的方法称为API</strong>②程序学到现在，有很多的包是需要自己导入的，所以看到编译错误的时候检查检查看看</p>
+<h2 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h2><p><img src="https://style.youkeda.com/img/ham/course/j4/studentapi.svg" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fm.douban.app.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.PostConstruct;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> fm.douban.app.model.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentControl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Student&gt; students = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      Student student = <span class="keyword">new</span> Student();</span><br><span class="line">      student.setId(<span class="string">"1"</span>);</span><br><span class="line">      student.setName(<span class="string">"范闲"</span>);</span><br><span class="line">       student.setAge(<span class="string">"20"</span>);</span><br><span class="line">        student.setSex(<span class="string">"男"</span>);</span><br><span class="line">      students.put(student.getId(), student);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/api/student"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Student <span class="title">getStudent</span><span class="params">(@RequestParam(<span class="string">"id"</span>)</span> String id) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> students.get(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/12/day52/" data-id="ckf1257g30028nsuxgrw53zyr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-MVC%E3%80%81Spring-BOOT%E3%80%81Spring-Controllr%E3%80%81Get-Request/" rel="tag">Spring MVC、Spring BOOT、Spring Controllr、Get Request</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/10/day51/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day51</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BOM-%E3%80%81window%E3%80%81location-history%E3%80%81Navigator-screen/" rel="tag">BOM 、window、location/history、Navigator/screen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" rel="tag">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" rel="tag">CSS定位（float）模态框 搜索框</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" rel="tag">CSS装饰-cutsor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM%E4%BA%8B%E4%BB%B6-%E3%80%81%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E3%80%81%E5%86%92%E6%B3%A1%E3%80%81%E6%8D%95%E8%8E%B7%E3%80%81%E5%A7%94%E6%89%98%E3%80%81%E7%A7%BB%E5%8A%A8%E4%BA%8B%E4%BB%B6%E3%80%81%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%BA%8B%E4%BB%B6%E3%80%81%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6/" rel="tag">DOM事件 、点击事件、冒泡、捕获、委托、移动事件、表单元素事件、滚动事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" rel="tag">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HelloSpring%E3%80%81Spring-Bean%E3%80%81Spring-Resource%E3%80%81Spring-Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%88Lifecycle/" rel="tag">HelloSpring、Spring Bean、Spring Resource、Spring Bean的生命周期（Lifecycle)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScripe%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C%E3%80%81%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF%E3%80%81%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%EF%BC%88math-storage-string-array-date%EF%BC%89/" rel="tag">JavaScripe对象、对象属性操作、对象的继承、内置对象（math,storage,string,array,date）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" rel="tag">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Js-DOM-%E3%80%81%E8%AE%BF%E9%97%AEDOM%E3%80%81DOM%E5%B1%9E%E6%80%A7%E3%80%81DOM%E6%93%8D%E4%BD%9C/" rel="tag">Js(DOM)、访问DOM、DOM属性、DOM操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" rel="tag">SCSS 、 变量 、 嵌套 、mixin/include</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" rel="tag">SMTP、javaMail邮件发送、实战天气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-MVC%E3%80%81Spring-BOOT%E3%80%81Spring-Controllr%E3%80%81Get-Request/" rel="tag">Spring MVC、Spring BOOT、Spring Controllr、Get Request</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" rel="tag">User-Agent、Referer、Host</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" rel="tag">css 定位- position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="tag">css盒模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" rel="tag">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E5%87%BD%E6%95%B0%E3%80%81%E5%8F%82%E6%95%B0%E3%80%81%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%AE%A1%E6%95%B0%E5%99%A8/" rel="tag">javascript 函数、参数、返回值、计数器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-%E5%BE%AA%E7%8E%AF/" rel="tag">javascript 循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E3%80%81%E6%95%B0%E7%BB%84/" rel="tag">javascript布尔类型、条件判断、数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" rel="tag">java网络编程   GET请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" rel="tag">java面向对象-项目实战</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="tag">list和数组的转换以及 集合List的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring%E5%85%A5%E9%97%A8%E3%80%81maven%E5%85%A5%E9%97%A8%E3%80%81hello-Spring/" rel="tag">spring入门、maven入门、hello Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" rel="tag">下载文件图片、解析excel、cookie、session、复用session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" rel="tag">冒泡排序、选择排序、插入排序、二分插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%B3%E6%88%98%E4%BC%98%E8%AF%BE%E8%BE%BE%E5%AE%98%E7%BD%91-%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E3%80%81%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%88%97%E8%A1%A8%E3%80%81%E6%8E%A5%E5%85%A5%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E3%80%81%E5%B0%81%E8%A3%85%E5%87%BD%E6%95%B0%E3%80%81/" rel="tag">决战优课达官网(页面渲染、点击展开列表、接入后端数据、封装函数、)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" rel="tag">响应式布局、媒体查询、断点 、 实战微博个人页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E4%BA%91/" rel="tag">图云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" rel="tag">实战网易云音乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" rel="tag">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%EF%BC%88%E5%8D%8F%E8%AE%AE%E3%80%81url%E3%80%81api-get%E8%AF%B7%E6%B1%82%E3%80%81post%E8%AF%B7%E6%B1%82%E3%80%81chrome-Network%EF%BC%89/" rel="tag">网络请求（协议、url、api+get请求、post请求、chrome Network）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" rel="tag">背景颜色、 背景图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" rel="tag">递归、分治思想-归并排序、快速排序、快速选择</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BOM-%E3%80%81window%E3%80%81location-history%E3%80%81Navigator-screen/" style="font-size: 10px;">BOM 、window、location/history、Navigator/screen</a> <a href="/tags/CSS-Flex%E5%B8%83%E5%B1%80%E3%80%81justify-content%E5%92%8Calign-items%E3%80%81flex-wrap%E3%80%81flex-none%E5%92%8Cflex-1%E3%80%81flex-direction%E3%80%81%E5%BE%AE%E5%8D%9A%E5%B7%A6%E4%BE%A7%E5%BC%80%E5%8F%91/" style="font-size: 10px;">CSS Flex布局、justify-content和align-items、flex-wrap、flex none和flex 1、flex-direction、微博左侧开发</a> <a href="/tags/CSS%E5%AE%9A%E4%BD%8D%EF%BC%88float%EF%BC%89%E6%A8%A1%E6%80%81%E6%A1%86-%E6%90%9C%E7%B4%A2%E6%A1%86/" style="font-size: 10px;">CSS定位（float）模态框 搜索框</a> <a href="/tags/CSS%E8%A3%85%E9%A5%B0-cutsor/" style="font-size: 10px;">CSS装饰-cutsor</a> <a href="/tags/DOM%E4%BA%8B%E4%BB%B6-%E3%80%81%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E3%80%81%E5%86%92%E6%B3%A1%E3%80%81%E6%8D%95%E8%8E%B7%E3%80%81%E5%A7%94%E6%89%98%E3%80%81%E7%A7%BB%E5%8A%A8%E4%BA%8B%E4%BB%B6%E3%80%81%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%BA%8B%E4%BB%B6%E3%80%81%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6/" style="font-size: 10px;">DOM事件 、点击事件、冒泡、捕获、委托、移动事件、表单元素事件、滚动事件</a> <a href="/tags/HTML5-CSS3J%E4%BB%8B%E7%BB%8D-CSS%E4%BC%AA%E7%B1%BB%EF%BC%88after-before%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BC%AA%E7%B1%BB%E3%80%81%E5%88%97%E8%A1%A8%E4%BC%AA%E7%B1%BB%E3%80%81%E5%BE%AE%E5%8D%9A%E5%A4%B4%E9%83%A8%E5%BC%80%E5%8F%91%EF%BC%89/" style="font-size: 10px;">HTML5/CSS3J介绍 CSS伪类（after/before、清除浮动、事件伪类、列表伪类、微博头部开发）</a> <a href="/tags/HelloSpring%E3%80%81Spring-Bean%E3%80%81Spring-Resource%E3%80%81Spring-Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%88Lifecycle/" style="font-size: 10px;">HelloSpring、Spring Bean、Spring Resource、Spring Bean的生命周期（Lifecycle)</a> <a href="/tags/JavaScripe%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C%E3%80%81%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF%E3%80%81%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%EF%BC%88math-storage-string-array-date%EF%BC%89/" style="font-size: 10px;">JavaScripe对象、对象属性操作、对象的继承、内置对象（math,storage,string,array,date）</a> <a href="/tags/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-Response-%E7%BD%91%E9%A1%B5-Response-%E9%9D%9E%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6-Response-JSON/" style="font-size: 10px;">Java网络编程 Response-网页 Response-非文本文件 Response-JSON</a> <a href="/tags/Js-DOM-%E3%80%81%E8%AE%BF%E9%97%AEDOM%E3%80%81DOM%E5%B1%9E%E6%80%A7%E3%80%81DOM%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">Js(DOM)、访问DOM、DOM属性、DOM操作</a> <a href="/tags/SCSS-%E3%80%81-%E5%8F%98%E9%87%8F-%E3%80%81-%E5%B5%8C%E5%A5%97-%E3%80%81mixin-include/" style="font-size: 10px;">SCSS 、 变量 、 嵌套 、mixin/include</a> <a href="/tags/SMTP%E3%80%81javaMail%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E3%80%81%E5%AE%9E%E6%88%98%E5%A4%A9%E6%B0%94/" style="font-size: 10px;">SMTP、javaMail邮件发送、实战天气</a> <a href="/tags/Spring-MVC%E3%80%81Spring-BOOT%E3%80%81Spring-Controllr%E3%80%81Get-Request/" style="font-size: 10px;">Spring MVC、Spring BOOT、Spring Controllr、Get Request</a> <a href="/tags/User-Agent%E3%80%81Referer%E3%80%81Host/" style="font-size: 10px;">User-Agent、Referer、Host</a> <a href="/tags/css-%E5%AE%9A%E4%BD%8D-position/" style="font-size: 10px;">css 定位- position</a> <a href="/tags/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">css盒模型</a> <a href="/tags/javascript-%E3%80%81%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%98%E9%87%8F%E3%80%81%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89/" style="font-size: 10px;">javascript 、基础数据类型（变量、数值类型、类型转换/字符串拼接、运算符）</a> <a href="/tags/javascript-%E5%87%BD%E6%95%B0%E3%80%81%E5%8F%82%E6%95%B0%E3%80%81%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%AE%A1%E6%95%B0%E5%99%A8/" style="font-size: 10px;">javascript 函数、参数、返回值、计数器</a> <a href="/tags/javascript-%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">javascript 循环</a> <a href="/tags/javascript%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%E3%80%81%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E3%80%81%E6%95%B0%E7%BB%84/" style="font-size: 10px;">javascript布尔类型、条件判断、数组</a> <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-GET%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">java网络编程   GET请求</a> <a href="/tags/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 10px;">java面向对象-项目实战</a> <a href="/tags/list%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%8F%8A-%E9%9B%86%E5%90%88List%E7%9A%84%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">list和数组的转换以及 集合List的操作</a> <a href="/tags/spring%E5%85%A5%E9%97%A8%E3%80%81maven%E5%85%A5%E9%97%A8%E3%80%81hello-Spring/" style="font-size: 10px;">spring入门、maven入门、hello Spring</a> <a href="/tags/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%A3%E6%9E%90excel%E3%80%81cookie%E3%80%81session%E3%80%81%E5%A4%8D%E7%94%A8session/" style="font-size: 10px;">下载文件图片、解析excel、cookie、session、复用session</a> <a href="/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E3%80%81%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">冒泡排序、选择排序、插入排序、二分插入排序</a> <a href="/tags/%E5%86%B3%E6%88%98%E4%BC%98%E8%AF%BE%E8%BE%BE%E5%AE%98%E7%BD%91-%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E3%80%81%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%88%97%E8%A1%A8%E3%80%81%E6%8E%A5%E5%85%A5%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E3%80%81%E5%B0%81%E8%A3%85%E5%87%BD%E6%95%B0%E3%80%81/" style="font-size: 10px;">决战优课达官网(页面渲染、点击展开列表、接入后端数据、封装函数、)</a> <a href="/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E3%80%81%E6%96%AD%E7%82%B9-%E3%80%81-%E5%AE%9E%E6%88%98%E5%BE%AE%E5%8D%9A%E4%B8%AA%E4%BA%BA%E9%A1%B5/" style="font-size: 10px;">响应式布局、媒体查询、断点 、 实战微博个人页</a> <a href="/tags/%E5%9B%BE%E4%BA%91/" style="font-size: 10px;">图云</a> <a href="/tags/%E5%AE%9E%E6%88%98%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">实战网易云音乐</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B0%8F%E6%A1%88%E4%BE%8B-%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E3%80%81-%E4%BA%8C%E6%AC%A1%E9%97%AE%E9%A2%98%EF%BC%88%E6%A0%87%E8%AE%B0%E6%B3%95%EF%BC%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E3%80%81-%E6%95%B0%E7%BB%84-%E5%AD%98%E5%82%A8%E5%92%8C%E8%AF%BB%E5%8F%96%E3%80%81%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4/" style="font-size: 10px;">性能优化小案例-二分法查找、 二次问题（标记法）、计算机内存管理、 数组-存储和读取、数组插入和删除</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%89%8D%E8%A8%80%E3%80%81-%E5%A4%A7O%E8%AE%B0%E6%B3%95%E3%80%81%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E3%80%81%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 10px;">数据结构及算法入门前言、 大O记法、时间复杂度、空间复杂度</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%EF%BC%88%E5%8D%8F%E8%AE%AE%E3%80%81url%E3%80%81api-get%E8%AF%B7%E6%B1%82%E3%80%81post%E8%AF%B7%E6%B1%82%E3%80%81chrome-Network%EF%BC%89/" style="font-size: 10px;">网络请求（协议、url、api+get请求、post请求、chrome Network）</a> <a href="/tags/%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" style="font-size: 10px;">背景颜色、 背景图片</a> <a href="/tags/%E9%80%92%E5%BD%92%E3%80%81%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E3%80%81%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/" style="font-size: 10px;">递归、分治思想-归并排序、快速排序、快速选择</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/12/day52/">day52</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/day51/">day51</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/day50/">day50</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/day46/">day46</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/day45/">day45</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
